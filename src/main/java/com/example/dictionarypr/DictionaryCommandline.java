@@ -39,13 +39,4 @@ public class DictionaryCommandline {
         d.dictionaryLookup();
     }
 
-    public static void main(String[] args) {
-
-        DictionaryCommandline Dic = new DictionaryCommandline();
-        //Dic.insertFromCommandline();
-        //Dic.showAllWords();
-        //Dic.dictionaryBasic();
-        Dic.dictionaryAdvanced();
-    }
-
 }
