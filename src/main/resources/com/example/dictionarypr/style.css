@@ -1,0 +1,48 @@
+#back_ground{
+    -fx-background-color: linear-gradient(to right, #ffefba, #ffffff);
+    -fx-background-radius: 30;
+}
+
+#button_bar{
+    -fx-background-color: linear-gradient(#c6ffdd, #fbd786, #f7797d);
+    -fx-background-radius: 30;
+
+}
+
+@font-face {
+  src: url(“com/example/dictionarypr/font/LemonJellyPersonalUse-dEqR.ttf”);
+}
+
+/*#avatar_name {
+  -fx-font-family: “LemonJellyPersonalUse”;
+}*/
+
+#mag_glass{
+    fx-background-image: none;
+}
+
+#book_icon{
+    fx-background-image: none;
+}
+
+#man_icon{
+    fx-background-image: none;
+}
+
+#setting_icon{
+    fx-background-image: none;
+}
+
+}
+
+.button
+{
+    -fx-background-radius: 25;
+}
+
+.button:pressed
+{
+     -fx-background-color : #bfe9ff;
+     -fx-padding: 10 15 13 15;
+     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+}
