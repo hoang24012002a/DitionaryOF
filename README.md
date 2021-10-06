@@ -1,3 +1,6 @@
+##Cập nhật giao diện lần 2
+* Chỉnh sửa lại layout pane search.
+* cấu trúc lại thư mục.
 ## Cập nhật giao diện
 pane search cơ bản là hoàn thiện
 cần xây dựng method chuyển pane để việc xây dựng các pane như Account, Setting, About
