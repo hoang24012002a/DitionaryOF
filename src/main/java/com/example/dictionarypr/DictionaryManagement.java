@@ -1,11 +1,16 @@
 package com.example.dictionarypr;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryManagement {
-    Dictionary  k = new Dictionary();
+    private Dictionary  k = new Dictionary();
     private final static String FILE = "dictionaries.txt";
+
+    public Dictionary getK() {
+        return k;
+    }
 
     /** Hàm insertFromCommandline() có chức năng nhập liệu từ. */
     public void insertFromCommandline() {
@@ -14,12 +19,12 @@ public class DictionaryManagement {
         int n = scan.nextInt();
         for(int i = 0;i < n ;i++ ) {
             Scanner input = new Scanner(System.in);
-            Word V = new Word();
             System.out.print(i+1+".English:");
-            V.word_target = input.nextLine();
+            String target = input.nextLine();
             System.out.print(i+1+".Vietnamese:");
-            V.word_explain = input.nextLine();
-            k.wordsArray.add(V);
+            String explain = input.nextLine();
+            Word V = new Word(target, explain);
+            k.getWordsArray().add(V);
         }
 
     }
@@ -34,18 +39,20 @@ public class DictionaryManagement {
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
 
         int c, dem = 0;
-        Word V = new Word();
+        String target = "";
+        String explain = "";
         while ((c = inputStreamReader.read()) != -1) {
             if (Character.toString((char)c).equals("\t")) {
                 dem++;
             } else if (Character.toString((char)c).equals("\n")) {
-                k.wordsArray.add(V);
+                Word V = new Word(target, explain);
+                k.getWordsArray().add(V);
+                target = "";explain = "";
                 dem = 0;
-                V = new Word();
             } else if (dem <1 )  {
-                V.word_target = V.word_target + (char) c;
+                target = target + (char) c;
             } else {
-                V.word_explain = V.word_explain + (char) c;
+                explain = explain + (char) c;
             }
         }
     }
@@ -53,22 +60,56 @@ public class DictionaryManagement {
     /**
      * Hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dong lệnh.
      */
-    void dictionaryLookup() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Nhập từ cần tra,English:");
-        String EInput = input.nextLine();
-        boolean check = false;
-        for (int i = 0; i < k.wordsArray.size(); i++)
+    public ArrayList<Word> dictionaryLookup(String English) {
+        English.toLowerCase();
+        for (int i = 0; i < k.getWordsArray().size(); i++)
         {
-            if(k.wordsArray.get(i).word_target.equals(EInput))
-            {   check = true;
-                System.out.println("Vietnamese: "+k.wordsArray.get(i).word_explain);
+            if(k.getWordsArray().get(i).equals(English))
+            {
+                System.out.println("Vietnamese:"+k.getWordsArray().get(i).getWord_explain());
                 break;
             }
         }
-        if(!check) {
-            System.out.println("Không có từ cần tìm");}
+        return k.getWordsArray();
     }
 
+    /**
+     * Hàm  có chức năng thêm từ.
+     */
+    public void addNewWord(String English, String Vietnamese) {
+        English.toLowerCase();
+        Vietnamese.toLowerCase();
+        Word V = new Word(Vietnamese,English);
+        k.getWordsArray().add(V);
+    }
 
+    /**
+     * Hàm có chức năng sử từ.
+     */
+    public boolean fixWord(String English, String Vietnamese) {
+            English.toLowerCase();
+            Vietnamese.toLowerCase();
+            for (int j = 0; j < k.getWordsArray().size(); j++) {
+                if (k.getWordsArray().get(j).getWord_target().equals(English)) {
+                    k.getWordsArray().get(j).setWord_target(Vietnamese);
+                    return true;
+                }
+            }
+            return false;
+    }
+
+    /**
+     * Hàm có chức năng xóa từ.
+     */
+    public boolean deleteWord(String English){
+        English.toLowerCase();
+        for (int j = 0; j < k.getWordsArray().size();j++) {
+            if (k.getWordsArray().get(j).getWord_target().equals(English)) {
+                Word V = k.getWordsArray().remove(j);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
