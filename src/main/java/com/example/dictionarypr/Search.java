@@ -12,12 +12,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Search {
-    private TextToSpeech engineSpeech = new TextToSpeech();
-    //private ArrayList<Word> engWordList;
-    //private Word word;
+    private final TextToSpeech engineSpeech = new TextToSpeech();
+    private final DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
+    private ArrayList<Word> engWordList;
+    private Word word;
     @FXML
     private Button speakBtn;
     @FXML
@@ -29,11 +31,21 @@ public class Search {
     @FXML
     private TextField searchText;
 
+    public Search() throws IOException {
+    }
+
     @FXML
     protected void renderListWord(ActionEvent actionEvent) {
         String text = searchText.getText();
         ObservableList<String> observableList = FXCollections.observableArrayList();
-        observableList.addAll("Tuan", "Hoang", "Truong", "Thang", "Tu", "Toan", "Huyen", "Khang");
+        engWordList = dictionaryCommandline.dictionarySearcher(text);
+        if (!engWordList.isEmpty()) {
+            for (Word value : engWordList) {
+                observableList.add(value.getWord_target());
+            }
+        } else {
+            System.out.printf("False");
+        }
         listEnglish.setItems(observableList);
         listEnglish.setCellFactory(new Callback<ListView<String>,
                                             ListCell<String>>() {
@@ -61,8 +73,9 @@ public class Search {
     @FXML
     protected void getEnglishWord(MouseEvent clicked) {
         int index = listEnglish.getSelectionModel().getSelectedIndex();
-        String engText = "tu tieng anh o vi tri index = " + (index);
-        String viText = "tu tieng viet o vi tri index = " + (index);
+        word = engWordList.get(index);
+        String engText = word.getWord_target();
+        String viText = word.getWord_explain();
         engWord.setText(engText);
         viWord.setText(viText);
     }
