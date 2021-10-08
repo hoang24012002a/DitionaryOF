@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##Cập nhật giao diện lần 2
 * Chỉnh sửa lại layout pane search.
 * cấu trúc lại thư mục.
@@ -18,7 +17,6 @@ nhưng khá là khó bởi conflig môi trường của từng máy...
 Font chữ còn thô kệch
 Các button chưa tạo được hiệu ứng press, hover
 Chưa hoàn thiện xong các pane Acc, Set,...(cố gắng hoàn thiện trong tuần).
-=======
 ## Mọi người clone về máy mình nhé !
 # Đây là phiên bản từ điển Command line cải tiến lần 1,
 #mọi người xem và cho ý kiến nhé !
@@ -30,4 +28,4 @@ Chưa hoàn thiện xong các pane Acc, Set,...(cố gắng hoàn thiện trong 
 1. Bổ sung hàm insertFromFile() có chức năng nhập dữ liệu từ điển từ tệp dictionaries.txt .
 2. Bổ sung hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
 3. Bổ sung hàm dictionaryAdvanced() có chức năng gọi các hàm insertFromFile(), showAllWords() và dictionaryLookup() .
->>>>>>> 8eb1fcb5efd3c177ef00779df7c10a53c6ce5b78
+

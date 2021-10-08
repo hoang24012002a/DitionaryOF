@@ -1,45 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.ScrollCellController">
+<HBox fx:id="hBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="160.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.ScrollCellController">
    <children>
       <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/english_icon.png" />
          </image>
          <HBox.margin>
-            <Insets top="1.0" />
+            <Insets />
          </HBox.margin>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Apple" textAlignment="CENTER" wrappingWidth="130.0">
+      <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Apple" textAlignment="CENTER" wrappingWidth="130.0">
          <HBox.margin>
-            <Insets top="8.0" />
+            <Insets top="6.0" />
          </HBox.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Danh từ" textAlignment="CENTER" wrappingWidth="80.0">
-         <HBox.margin>
-            <Insets top="8.0" />
-         </HBox.margin>
-      </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quả táo" textAlignment="CENTER" wrappingWidth="220.2000732421875">
-         <HBox.margin>
-            <Insets top="8.0" />
-         </HBox.margin>
-      </Text>
-      <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0">
-         <graphic>
-            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/speaker_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
    </children>
 </HBox>
