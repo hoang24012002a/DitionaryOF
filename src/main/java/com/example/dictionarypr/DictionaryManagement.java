@@ -60,17 +60,16 @@ public class DictionaryManagement {
     /**
      * Hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dong lệnh.
      */
-    public ArrayList<Word> dictionaryLookup(String English) {
+    public String dictionaryLookup(String English) {
         English.toLowerCase();
         for (int i = 0; i < k.getWordsArray().size(); i++)
         {
-            if(k.getWordsArray().get(i).equals(English))
-            {
-                System.out.println("Vietnamese:"+k.getWordsArray().get(i).getWord_explain());
-                break;
+            if(k.getWordsArray().get(i).getWord_target().equals(English)) {
+                return k.getWordsArray().get(i).getWord_explain();
             }
         }
-        return k.getWordsArray();
+
+        return null;
     }
 
     /**
@@ -79,7 +78,7 @@ public class DictionaryManagement {
     public void addNewWord(String English, String Vietnamese) {
         English.toLowerCase();
         Vietnamese.toLowerCase();
-        Word V = new Word(Vietnamese,English);
+        Word V = new Word(English,Vietnamese);
         k.getWordsArray().add(V);
     }
 
@@ -91,7 +90,7 @@ public class DictionaryManagement {
             Vietnamese.toLowerCase();
             for (int j = 0; j < k.getWordsArray().size(); j++) {
                 if (k.getWordsArray().get(j).getWord_target().equals(English)) {
-                    k.getWordsArray().get(j).setWord_target(Vietnamese);
+                    k.getWordsArray().get(j).setWord_explain(Vietnamese);
                     return true;
                 }
             }
@@ -111,5 +110,20 @@ public class DictionaryManagement {
         }
 
         return false;
+    }
+
+    public void dictionaryExportToFile() throws IOException{
+        File file = new File(FILE);
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+        for (int j = 0; j < k.getWordsArray().size(); j++){
+            outputStreamWriter.write(k.getWordsArray().get(j).getWord_target());
+            outputStreamWriter.write("\t");
+            outputStreamWriter.write(k.getWordsArray().get(j).getWord_explain());
+            outputStreamWriter.write("\n");
+        }
+
+        outputStreamWriter.flush();
+
     }
 }

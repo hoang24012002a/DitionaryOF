@@ -27,6 +27,6 @@ public class Word {
 
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
-        this.word_explain = getWord_explain();
+        this.word_explain = word_explain;
     }
 }
