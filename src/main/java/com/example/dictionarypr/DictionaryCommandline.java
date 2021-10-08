@@ -61,13 +61,13 @@ public class DictionaryCommandline {
         return d.deleteWord(English);
     }
 
-    public ArrayList<Word> dictionarySearcher(String keyWord) {
-        ArrayList<Word> searchArray = new ArrayList<>();
+    public ArrayList<String> dictionarySearcher(String keyWord) {
+        ArrayList<String> searchArray = new ArrayList<>();
         keyWord.toLowerCase();
         boolean check = false;
         for (int i = 0; i < d.getK().getWordsArray().size(); i++) {
             if(d.getK().getWordsArray().get(i).getWord_target().startsWith(keyWord)) {
-                searchArray.add(d.getK().getWordsArray().get(i));
+                searchArray.add(d.getK().getWordsArray().get(i).getWord_target());
                 check = true;
             }
         }
