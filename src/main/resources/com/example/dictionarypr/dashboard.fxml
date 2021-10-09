@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="back_ground" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
+<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
    <left>
       <VBox fx:id="button_bar" prefHeight="600.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -33,13 +34,16 @@
                <graphic>
                   <ImageView fx:id="mag_glass" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/Magnifi-Glass-2-2-icon.png" />
+                        <Image url="@images/home_icon.png" />
                      </image>
                   </ImageView>
                </graphic>
                <font>
                   <Font size="21.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button layoutX="65.0" layoutY="239.0" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="170.0" stylesheets="@stylesheet.css" text="Search">
                <graphic>
@@ -105,7 +109,7 @@
                <graphic>
                   <ImageView fx:id="setting_icon1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/User-Interface-Settings-3-icon.png" />
+                        <Image url="@images/cancel_icon.png" />
                      </image>
                   </ImageView>
                </graphic>

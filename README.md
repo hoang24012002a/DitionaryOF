@@ -1,7 +1,19 @@
 ##Cập nhật giao diện lần 2
-* Chỉnh sửa lại layout pane search.
+* Chỉnh sửa lại layout pane search.(Tuấn gửi bản thô, Trường hoàn thiện)
 * cấu trúc lại thư mục.
-## Cập nhật giao diện
+* Done(nhưng chưa đẹp)
+* Thêm lib JFoenix(hỗ trợ đồ hoạ 2D) https://github.com/sshahine/JFoenix
+* Các layout có style.css riêng
+* Các file css được thêm thẳng vào .fxml nên các file .java ko cần câu lệnh scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
+##Hạn chế
+* Vẫn chưa hoàn thiện được phần đồ hoạ
+* Font chưa vẫn xấu (do lười chưa nhiều label quá :))
+* Các button vẫn thô
+* Chưa có hiệu ứng chuyển scene
+* Ý tưởng về Account vẫn chưa đi vào đâu
+
+## Cập nhật giao diện lần 1
 pane search cơ bản là hoàn thiện
 cần xây dựng method chuyển pane để việc xây dựng các pane như Account, Setting, About
 !!! Ý tưởng mới(đang hoàn thiện)
@@ -17,7 +29,6 @@ nhưng khá là khó bởi conflig môi trường của từng máy...
 Font chữ còn thô kệch
 Các button chưa tạo được hiệu ứng press, hover
 Chưa hoàn thiện xong các pane Acc, Set,...(cố gắng hoàn thiện trong tuần).
-
 ## Mọi người clone về máy mình nhé !
 # Đây là phiên bản từ điển Command line cải tiến lần 2,
 #mọi người xem và cho ý kiến nhé !
@@ -37,4 +48,3 @@ Chưa hoàn thiện xong các pane Acc, Set,...(cố gắng hoàn thiện trong 
 7. Class DictionaryManagement phát triển thêm các hàm có chức năng thêm , sửa , xóa dữ liệu bằng dòng lệnh .
 8. Class DictionaryCommandLine bổ sung hàm dictionarySearcher() có chức năng tìm kiếm các từ .
 9. Class DictionaryManagement bổ sung hàm dictionaryExportToFile() có chức năng xuất dữ liệu từ điển hiện tại ra files .
-\
