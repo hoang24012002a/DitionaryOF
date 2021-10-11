@@ -1,25 +1,26 @@
-map	Bản đồ
-way	Đường
-world	Thế giới
-library	Thư viện
-love	Yêu
+army	quân đội
 baby	em bé
-computer	Máy tính
-people	Người
-two	Hai
-family	Gia đình
-history	Lịch sử
-health	Sức khỏe
-system	Hệ thống
-information	Thông tin
-army	Quân đội	
+brother	bo
+computer	máy tính
+family	gia đình
+friend	ban be
+health	sức khỏe
+history	lịch sử
+inaction	sự thiếu hoạt động
+information	thông tin
+integer	số nguyên
 integraaph	máy đo diện tích
-integer	Số nguyên
-integrality	tính toàn bộ
 integrability	tính khả tích
 integral	trọn vẹn
-inaction	sự thiếu hoạt động
-transport	vận tải
-translate	phiên dịch
+integrality	tính toàn bộ
+library	thư viện
+love	yêu
+map	bản đồ
+people	người
+system	hệ thống
 transform	thay đổi hoàn toàn
 transit	đi qua
+translate	phiên dịch
+transport	vận tải
+way	duong
+world	thế giới
