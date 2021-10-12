@@ -3,9 +3,11 @@ package com.example.dictionarypr;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -35,49 +37,57 @@ public class Search {
     }
 
     @FXML
-    protected void renderListWord(ActionEvent actionEvent) {
+    protected void renderListWord(KeyEvent actionEvent) {
         String text = searchText.getText();
         ObservableList<String> observableList = FXCollections.observableArrayList();
         engWordList = dictionaryCommandline.dictionarySearcher(text);
-        if (!engWordList.isEmpty()) {
+        if (engWordList != null) {
             for (Word value : engWordList) {
                 observableList.add(value.getWord_target());
             }
+            listEnglish.setItems(observableList);
+            listEnglish.setCellFactory(new Callback<ListView<String>,
+                                               ListCell<String>>() {
+                                           @Override
+                                           public ListCell<String> call(ListView<String> list) {
+                                               return new LabelCell();
+                                           }
+                                       }
+            );
         } else {
-            System.out.printf("False");
+            listEnglish.getItems().clear();
+            listEnglish.setPlaceholder(new Label("null"));
         }
-        listEnglish.setItems(observableList);
-        listEnglish.setCellFactory(new Callback<ListView<String>,
-                                            ListCell<String>>() {
-                                @Override
-                                public ListCell<String> call(ListView<String> list) {
-                                    return new ColorRectCell();
-                                }
-                            }
-        );
     }
-    static class ColorRectCell extends ListCell<String> {
+    static class LabelCell extends ListCell<String> {
         @Override
         public void updateItem(String item, boolean empty) {
             super.updateItem(item, empty);
             Label label = new Label();
-            if (item != null) {
+            if(empty || item == null) {
+                setGraphic(null);
+                setText(null);
+            }
+            else {
                 label.setText(item);
                 label.setFont(new Font("Cambria", 16));
                 label.setPrefWidth(172);
                 label.setPrefHeight(28);
+                label.setCursor(Cursor.HAND);
                 setGraphic(label);
             }
         }
     }
     @FXML
     protected void getEnglishWord(MouseEvent clicked) {
-        int index = listEnglish.getSelectionModel().getSelectedIndex();
-        word = engWordList.get(index);
-        String engText = word.getWord_target();
-        String viText = word.getWord_explain();
-        engWord.setText(engText);
-        viWord.setText(viText);
+        if (engWordList != null) {
+            int index = listEnglish.getSelectionModel().getSelectedIndex();
+            word = engWordList.get(index);
+            String engText = word.getWord_target();
+            String viText = word.getWord_explain();
+            engWord.setText(engText);
+            viWord.setText(viText);
+        }
     }
 
     @FXML

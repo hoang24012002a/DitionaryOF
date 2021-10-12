@@ -55,6 +55,8 @@ public class DictionaryManagement {
                 explain = explain + (char) c;
             }
         }
+        inputStream.close();
+        inputStreamReader.close();
     }
 
     /**
@@ -86,15 +88,15 @@ public class DictionaryManagement {
      * Hàm có chức năng sử từ.
      */
     public boolean fixWord(String English, String Vietnamese) {
-            English.toLowerCase();
-            Vietnamese.toLowerCase();
-            for (int j = 0; j < k.getWordsArray().size(); j++) {
-                if (k.getWordsArray().get(j).getWord_target().equals(English)) {
-                    k.getWordsArray().get(j).setWord_explain(Vietnamese);
-                    return true;
-                }
+        English.toLowerCase();
+        Vietnamese.toLowerCase();
+        for (int j = 0; j < k.getWordsArray().size(); j++) {
+            if (k.getWordsArray().get(j).getWord_target().equals(English)) {
+                k.getWordsArray().get(j).setWord_explain(Vietnamese);
+                return true;
             }
-            return false;
+        }
+        return false;
     }
 
     /**
@@ -124,6 +126,7 @@ public class DictionaryManagement {
         }
 
         outputStreamWriter.flush();
-
+        outputStream.close();
+        outputStreamWriter.close();
     }
 }

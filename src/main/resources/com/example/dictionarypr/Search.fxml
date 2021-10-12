@@ -34,7 +34,7 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="searchText" onAction="#renderListWord" prefWidth="240.0" promptText="Find word..." />
+                  <TextField fx:id="searchText" onKeyReleased="#renderListWord" prefWidth="240.0" promptText="Find word..." />
                   <ListView fx:id="listEnglish" editable="true" onMouseClicked="#getEnglishWord" prefHeight="300.0" prefWidth="200.0">
                      <VBox.margin>
                         <Insets top="30.0" />

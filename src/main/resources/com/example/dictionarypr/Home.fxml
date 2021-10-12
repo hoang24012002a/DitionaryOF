@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<Pane fx:id="home_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Home">
+<Pane fx:id="home_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Home">
    <children>
       <ImageView fx:id="ielts_imane" fitHeight="354.0" fitWidth="630.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -46,7 +43,7 @@
             <Image url="@images/github_icon.png" />
          </image>
       </ImageView>
-      <Hyperlink fx:id="link_git" layoutX="332.0" layoutY="367.0" prefHeight="23.0" prefWidth="46.0" text="Github" />
+      <Hyperlink fx:id="linkGit" layoutX="332.0" layoutY="367.0" onAction="#setLinkGit" prefHeight="23.0" prefWidth="46.0" text="Github" />
       <JFXTextArea fx:id="thank_text" layoutX="313.0" layoutY="396.0" prefHeight="94.0" prefWidth="309.0" text="Send a thanks to everyone's contribution. Please contribute your opinion in the Github link above" />
       <Label fx:id="special_thank_label" layoutX="428.0" layoutY="370.0" prefHeight="17.0" prefWidth="116.0" text="Special Thanks" />
    </children>

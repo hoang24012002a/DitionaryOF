@@ -15,14 +15,17 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
  */
 public class TextToSpeech {
     private final SynthesiserV2 synthesiser;
-    private TextToSpeechThread thread;
-    private static class TextToSpeechThread extends Thread {
-        private void init(String text, SynthesiserV2 synthesiser) {
+    private final TextToSpeechThread thread;
+
+    private class TextToSpeechThread extends Thread {
+        private synchronized void init(String text, Double speed, String languageCode ,SynthesiserV2 synthesiser) {
             try {
-                synthesiser.setSpeed(0.75);
+                synthesiser.setSpeed(speed);
+                synthesiser.setLanguage(languageCode);
                 InputStream dataSpeech = synthesiser.getMP3Data(text);
                 AdvancedPlayer player = new AdvancedPlayer(dataSpeech);
                 player.play();
+                player.close();
             } catch (IOException | JavaLayerException e) {
                 e.printStackTrace();
             }
@@ -35,9 +38,10 @@ public class TextToSpeech {
     }
 
     public void speak(String text) {
-        TextToSpeechThread thread = new TextToSpeechThread();
-        thread.init(text, synthesiser);
+        thread.init(text,0.75, "en-us", synthesiser);
         thread.setDaemon(false);
-        thread.start();
+        if (!thread.isAlive()) {
+            thread.start();
+        }
     }
 }

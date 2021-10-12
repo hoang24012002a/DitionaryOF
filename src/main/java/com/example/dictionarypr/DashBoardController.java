@@ -51,7 +51,7 @@ public class DashBoardController implements Initializable {
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
-    public void exit(ActionEvent actionEvent) throws IOException {
+    public void exit(ActionEvent actionEvent) {
         System.exit(0);
     }
 }
