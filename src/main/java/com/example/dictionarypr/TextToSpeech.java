@@ -31,14 +31,13 @@ public class TextToSpeech {
             }
         }
     }
-
     public TextToSpeech() {
         synthesiser = new SynthesiserV2("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
         thread = new TextToSpeechThread();
     }
 
     public void speak(String text) {
-        thread.init(text,0.75, "en-us", synthesiser);
+        thread.init(text, 0.75, "en-us", synthesiser);
         thread.setDaemon(false);
         if (!thread.isAlive()) {
             thread.start();
