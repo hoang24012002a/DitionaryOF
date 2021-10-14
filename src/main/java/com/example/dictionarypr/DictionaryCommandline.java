@@ -1,5 +1,7 @@
 package com.example.dictionarypr;
 
+import java.io.*;
+
 public class DictionaryCommandline {
 
     private DictionaryManagement d = new DictionaryManagement();
@@ -34,5 +36,15 @@ public class DictionaryCommandline {
         showAllWords();
     }
 
+    /** Hàm dictionaryAdvanced() có chức năng gọi hàm insertFromFile(), dictionaryLookup() và showAllWords(). */
+    public void dictionaryAdvanced(String English) {
+        try {
+            d.insertFromFile();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        showAllWords();
+        System.out.println(d.dictionaryLookup(English));
+    }
 
 }
