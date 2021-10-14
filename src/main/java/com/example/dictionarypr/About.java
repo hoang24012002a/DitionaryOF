@@ -69,7 +69,6 @@ public class About implements Initializable {
         }
         fixWord.setText("");
         meanViDong.setText("");
-        System.gc();
     }
 
     @FXML
@@ -81,7 +80,6 @@ public class About implements Initializable {
             }
         }
         deleteWord.setText("");
-        System.gc();
     }
 
     @Override
@@ -104,7 +102,7 @@ public class About implements Initializable {
         hBox.setPrefWidth(546.0);
         // create icon
         ImageView imageView = new ImageView();
-        File path = new File("C:\\Users\\tuanb\\Downloads\\btlOOP_tg\\src\\main\\resources\\com\\example\\dictionarypr\\images\\united-kingdom_icon.png");
+        File path = new File("src/main/resources/com/example/dictionarypr/images/united-kingdom_icon.png");
         imageView.setImage(new Image(path.toURI().toString()));
         imageView.setFitHeight(32.0);
         imageView.setFitWidth(32.0);
@@ -125,12 +123,12 @@ public class About implements Initializable {
         speakImage.setFitHeight(24.0);
         imageView.setPickOnBounds(true);
         imageView.setPreserveRatio(true);
-        path = new File("C:\\Users\\tuanb\\Downloads\\btlOOP_tg\\src\\main\\resources\\com\\example\\dictionarypr\\images\\speaker_icon.png");
+        path = new File("src/main/resources/com/example/dictionarypr/images/speaker_icon.png");
         speakImage.setImage(new Image(path.toURI().toString()));
         speakBtn.setGraphic(speakImage);
         speakBtn.setOnAction((new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                engineSpeech.speak(targetWord);
+                engineSpeech.speak(targetWord, "en-us", 0.75);
             }
         }));
         hBox.getChildren().add(speakBtn);

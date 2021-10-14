@@ -1,5 +1,6 @@
 package com.example.dictionarypr;
 ;
+import com.jfoenix.controls.JFXSlider;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ public class Search {
     private final TextToSpeech engineSpeech = new TextToSpeech();
     private final DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
     private ArrayList<Word> engWordList;
+    private double speed;
     private Word word;
     @FXML
     private Button speakBtn;
@@ -33,8 +35,8 @@ public class Search {
     @FXML
     private TextField searchText;
 
-    public Search() throws IOException {
-    }
+    @FXML
+    private JFXSlider speedSlider;
 
     @FXML
     protected void renderListWord(KeyEvent actionEvent) {
@@ -91,8 +93,22 @@ public class Search {
     }
 
     @FXML
-    protected void speakEnglish(ActionEvent clicked) {
+    protected void speakEnglishUs(ActionEvent clicked) {
         String text = engWord.getText();
-        engineSpeech.speak(text);
+        engineSpeech.speak(text, "en-us", speed);
+    }
+    @FXML
+    protected void speakEnglishUk(ActionEvent clicked) {
+        String text = engWord.getText();
+        engineSpeech.speak(text, "en-uk", speed);
+    }
+
+    @FXML
+    protected void action(MouseEvent mouseEvent) {
+        int value = (int) speedSlider.getValue();
+        speed = (double) value / 100;
+        System.out.println(speed);
+    }
+    public Search() throws IOException {
     }
 }

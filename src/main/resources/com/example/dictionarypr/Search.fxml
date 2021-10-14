@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -20,11 +22,23 @@
                      <font>
                         <Font size="28.0" />
                      </font></Label>
-                  <Button fx:id="speakBtn" layoutX="304.0" layoutY="29.0" mnemonicParsing="false" onAction="#speakEnglish" text="Speak EN" AnchorPane.topAnchor="29.0" />
+                  <Button fx:id="speakBtn" layoutX="304.0" layoutY="29.0" mnemonicParsing="false" onAction="#speakEnglishUs" text="US" AnchorPane.topAnchor="29.0" />
                   <Text fx:id="viWord" fontSmoothingType="LCD" layoutX="33.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hien giai nghia tieng viet" wrappingWidth="341.13671875">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font></Text>
+                  <JFXSlider fx:id="speedSlider" blockIncrement="5.0" layoutX="169.0" layoutY="213.0" max="200.0" minorTickCount="0" onMouseClicked="#action" prefHeight="57.0" prefWidth="187.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+                  <ImageView fx:id="speed_icon" fitHeight="16.0" fitWidth="16.0" layoutX="130.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/speed_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="367.0" layoutY="241.0" text="\%">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="341.0" layoutY="29.0" mnemonicParsing="false" onAction="#speakEnglishUk" text="UK" />
                </children>
             </AnchorPane>
          </center>
