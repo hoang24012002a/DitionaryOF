@@ -1,1 +1,1 @@
-## Mọi người clone về máy mình nhé !
+## Bản command line sơ khai đã qua chỉnh sửa .Mọi người xem và cho ý kiến chốt hạn trước khi đưa lên branch Master !
