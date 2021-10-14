@@ -1,0 +1,26 @@
+#search_back_ground{
+    /*-fx-background-image: url('images/tuan_nobrk.png');*/
+    /*-fx-background-color: linear-gradient(red,blue);*/
+}
+
+@font-face{
+  font-family: 'Lemon';
+  font-weight: 400;
+  src: url('../font/LemonJellyPersonalUse-dEqR.ttf') format('truetype');
+}
+#viWord{
+    -fx-font-family: 'Lemon';
+    -fx-font-size: 30pt;
+}
+
+#searchText{
+    -fx-text-inner-color:linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+    -fx-font-size: 12;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+    -fx-font-weight: italic;
+    -fx-strikethrough: true;
+}
+
