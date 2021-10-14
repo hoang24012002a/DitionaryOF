@@ -1,0 +1,7 @@
+#accountPane{
+    -fx-background-color: linear-gradient(to left, #d9a7c7, #fffcdc);
+}
+
+#Pane1{
+    -fx-background-image: url("@images/lock_icon.jpg");
+}

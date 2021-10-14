@@ -1,16 +1,15 @@
 package com.example.dictionarypr;
 ;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXSlider;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
@@ -25,9 +24,7 @@ public class Search {
     private double speed;
     private Word word;
     @FXML
-    private Button speakBtn;
-    @FXML
-    private ListView<String> listEnglish;
+    private JFXListView<String> listEnglish;
     @FXML
     private Label engWord;
     @FXML
@@ -97,17 +94,28 @@ public class Search {
         String text = engWord.getText();
         engineSpeech.speak(text, "en-us", speed);
     }
-    @FXML
-    protected void speakEnglishUk(ActionEvent clicked) {
-        String text = engWord.getText();
-        engineSpeech.speak(text, "en-uk", speed);
-    }
+//    @FXML
+//    protected void speakEnglishUk(ActionEvent clicked) {
+//        String text = engWord.getText();
+//        engineSpeech.speak(text, "en-uk", speed);
+//    }
+
+//    @FXML
+//    protected void action(MouseEvent mouseEvent) {
+//        int value = (int) speedSlider.getValue();
+//        speed = (double) value / 100;
+//        System.out.println(speed);
+//    }
 
     @FXML
-    protected void action(MouseEvent mouseEvent) {
-        int value = (int) speedSlider.getValue();
-        speed = (double) value / 100;
-        System.out.println(speed);
+    protected void addNewWord(ActionEvent clicked) {
+        String engWordAdd = engWord.getText();
+        String viWordAdd = viWord.getText();
+        if (!engWordAdd.equals("") && !viWordAdd.equals("")) {
+            dictionaryCommandline.add(engWordAdd, viWordAdd);
+            dictionaryCommandline.ExportToFile();
+        }
+        System.out.print(engWordAdd + "\n" + viWordAdd);
     }
     public Search() throws IOException {
     }

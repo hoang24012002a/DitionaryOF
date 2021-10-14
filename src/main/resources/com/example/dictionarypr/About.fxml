@@ -2,88 +2,65 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="about_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.About">
+<Pane fx:id="aboutPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.About">
    <children>
-      <TextField fx:id="addWordEn" layoutX="35.0" layoutY="27.0" prefHeight="30.0" prefWidth="171.0" promptText="Add new word..." />
-      <TextField fx:id="fixWord" layoutX="35.0" layoutY="83.0" prefHeight="30.0" prefWidth="171.0" promptText="Fix word...." />
-      <TextField fx:id="deleteWord" layoutX="35.0" layoutY="145.0" prefHeight="30.0" prefWidth="171.0" promptText="Delete Word..." />
-      <TextField fx:id="meanViDanh" layoutX="392.0" layoutY="25.0" prefHeight="30.0" prefWidth="133.0" />
-      <TextField fx:id="meanViDong" layoutX="392.0" layoutY="90.0" prefHeight="30.0" prefWidth="133.0" />
-      <TextField fx:id="meanViTinh" layoutX="392.0" layoutY="160.0" prefHeight="30.0" prefWidth="133.0" />
-      <TextField fx:id="meanViTrang" layoutX="392.0" layoutY="224.0" prefHeight="30.0" prefWidth="133.0" />
-      <ScrollPane layoutX="35.0" layoutY="314.0" prefHeight="156.0" prefWidth="561.0">
+      <ScrollPane fx:id="scrollPane" layoutX="35.0" layoutY="51.0" prefHeight="392.0" prefWidth="561.0" vbarPolicy="ALWAYS">
          <content>
             <VBox fx:id="contentVbox" prefHeight="242.0" prefWidth="546.0">
                <children>
-                  <!--                  <HBox prefHeight="32.0" prefWidth="546.0">-->
-                  <!--                     <children>-->
-                  <!--                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">-->
-                  <!--                           <image>-->
-                  <!--                              <Image url="@images/united-kingdom_icon.png" />-->
-                  <!--                           </image>-->
-                  <!--                        </ImageView>-->
-                  <!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="apple" wrappingWidth="180.53669357299805">-->
-                  <!--                           <HBox.margin>-->
-                  <!--                              <Insets left="28.0" top="2.0" />-->
-                  <!--                           </HBox.margin>-->
-                  <!--                           <font>-->
-                  <!--                              <Font size="21.0" />-->
-                  <!--                           </font>-->
-                  <!--                        </Text>-->
-                  <!--                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0">-->
-                  <!--                           <HBox.margin>-->
-                  <!--                              <Insets left="260.0" />-->
-                  <!--                           </HBox.margin>-->
-                  <!--                           <graphic>-->
-                  <!--                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">-->
-                  <!--                                 <image>-->
-                  <!--                                    <Image url="@images/speaker_icon.png" />-->
-                  <!--                                 </image>-->
-                  <!--                              </ImageView>-->
-                  <!--                           </graphic>-->
-                  <!--                        </Button>-->
-                  <!--                     </children>-->
-                  <!--                  </HBox>-->
-
+<!--                  <HBox fx:id="hBox" prefHeight="32.0" prefWidth="546.0">-->
+<!--                     <children>-->
+<!--                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                           <image>-->
+<!--                              <Image url="@images/united-kingdom_icon.png" />-->
+<!--                           </image>-->
+<!--                        </ImageView>-->
+<!--                        <Text fx:id="word" strokeType="OUTSIDE" strokeWidth="0.0" text="apple" wrappingWidth="180.53669357299805">-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="28.0" top="2.0" />-->
+<!--                           </HBox.margin>-->
+<!--                           <font>-->
+<!--                              <Font size="21.0" />-->
+<!--                           </font>-->
+<!--                        </Text>-->
+<!--                        <JFXButton fx:id="delButton" ellipsisString="" scaleX="0.9" scaleY="0.9" style="-fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20;" text="Del">-->
+<!--                           <graphic>-->
+<!--                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">-->
+<!--                                 <image>-->
+<!--                                    <Image url="@images/bin_icon.png" />-->
+<!--                                 </image>-->
+<!--                              </ImageView>-->
+<!--                           </graphic>-->
+<!--                           <cursor>-->
+<!--                              <Cursor fx:constant="HAND" />-->
+<!--                           </cursor>-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="94.0" top="1.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </JFXButton>-->
+<!--                        <JFXButton fx:id="speakButton" prefHeight="32.0" prefWidth="126.0" scaleX="0.9" scaleY="0.9" style="-fx-background-radius: 30; -fx-cursor: hand; -fx-border-color: purple; -fx-border-radius: 30;" text="/ˈapəl/">-->
+<!--                           <graphic>-->
+<!--                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                 <image>-->
+<!--                                    <Image url="@images/play_32.png" />-->
+<!--                                 </image>-->
+<!--                              </ImageView>-->
+<!--                           </graphic>-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="3.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </JFXButton>-->
+<!--                     </children>-->
+<!--                  </HBox>-->
                </children>
             </VBox>
          </content>
       </ScrollPane>
-      <JFXCheckBox fx:id="danh_tu_checkbox" layoutX="299.0" layoutY="33.0" text="Danh tu" />
-      <JFXCheckBox fx:id="dong_tu_checkbox" layoutX="300.0" layoutY="98.0" text="Dong tu" />
-      <JFXCheckBox fx:id="tinh_tu_checkbox" layoutX="300.0" layoutY="168.0" text="Tinh tu" />
-      <JFXCheckBox fx:id="trang_tu_checkbox" layoutX="300.0" layoutY="232.0" text="Trang tu" />
-      <Button fx:id="addBtn" layoutX="206.0" layoutY="26.0" mnemonicParsing="false" onAction="#addNewWord" prefHeight="32.0" prefWidth="32.0">
-         <graphic>
-            <ImageView fx:id="add_icon" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/plus_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="fixBtn" layoutX="206.0" layoutY="82.0" mnemonicParsing="false" onAction="#fixWordEvent" prefHeight="32.0" prefWidth="32.0">
-         <graphic>
-            <ImageView fx:id="add_icon1" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/plus_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="deleteBtn" layoutX="206.0" layoutY="144.0" mnemonicParsing="false" onAction="#deleteWordEvent" prefHeight="32.0" prefWidth="32.0">
-         <graphic>
-            <ImageView fx:id="add_icon11" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/plus_icon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
    </children>
 </Pane>

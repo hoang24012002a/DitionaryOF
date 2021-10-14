@@ -4,61 +4,105 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Search">
+<Pane fx:id="searchBackground" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Search">
    <children>
-      <BorderPane prefHeight="500.0" prefWidth="630.0">
+      <BorderPane fx:id="searchBorderPane" prefHeight="500.0" prefWidth="630.0">
          <center>
             <AnchorPane prefHeight="450.0" prefWidth="410.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="engWord" layoutY="1.0" prefHeight="80.0" prefWidth="275.0" text="o hien tu tieng anh abc xyz" textAlignment="CENTER">
+                  <Label fx:id="engWord" layoutY="1.0" prefHeight="80.0" prefWidth="258.0" text="See" textAlignment="CENTER">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
                      <font>
                         <Font size="28.0" />
-                     </font></Label>
-                  <Button fx:id="speakBtn" layoutX="304.0" layoutY="29.0" mnemonicParsing="false" onAction="#speakEnglishUs" text="US" AnchorPane.topAnchor="29.0" />
-                  <Text fx:id="viWord" fontSmoothingType="LCD" layoutX="33.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hien giai nghia tieng viet" wrappingWidth="341.13671875">
-                     <font>
-                        <Font name="Arial" size="20.0" />
-                     </font></Text>
-                  <JFXSlider fx:id="speedSlider" blockIncrement="5.0" layoutX="169.0" layoutY="213.0" max="200.0" minorTickCount="0" onMouseClicked="#action" prefHeight="57.0" prefWidth="187.0" showTickLabels="true" showTickMarks="true" value="100.0" />
-                  <ImageView fx:id="speed_icon" fitHeight="16.0" fitWidth="16.0" layoutX="130.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/speed_icon.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="367.0" layoutY="241.0" text="\%">
-                     <font>
-                        <Font size="10.0" />
                      </font>
-                  </Label>
-                  <Button layoutX="341.0" layoutY="29.0" mnemonicParsing="false" onAction="#speakEnglishUk" text="UK" />
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></Label>
+                  <JFXButton layoutX="258.0" layoutY="28.0" onAction="#speakEnglishUs" prefHeight="32.0" prefWidth="126.0" style="-fx-background-radius: 30; -fx-cursor: hand; -fx-border-color: purple; -fx-border-radius: 30;" text="/ˈapəl/" AnchorPane.bottomAnchor="389.6" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="25.200000000000045" AnchorPane.topAnchor="28.0">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/play_32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton ellipsisString="" layoutX="179.0" layoutY="28.0" onAction="#addNewWord" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-background-radius: 20; -fx-cursor: hand;" text="Mark">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/favourite_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <GridPane layoutX="14.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="360.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="221.4" minHeight="10.0" prefHeight="97.1999755859375" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="233.3999942779541" minHeight="10.0" prefHeight="78.0000244140625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.00000610351566" minHeight="10.0" prefHeight="70.99998779296874" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.00000610351566" minHeight="10.0" prefHeight="104.60001220703123" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="90.0" text="Noun">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="34.0" prefWidth="94.0" text="Verb" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="18.0" prefWidth="71.0" text="Adj" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="34.0" prefWidth="114.0" text="Adverb" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <JFXListView style="-fx-border-radius: 10; -fx-border-color: blue; -fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXListView layoutX="190.0" layoutY="10.0" style="-fx-border-radius: 10; -fx-border-color: blue; -fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXListView layoutX="190.0" layoutY="100.0" style="-fx-border-radius: 10; -fx-border-color: blue; -fx-background-radius: 10;" GridPane.columnIndex="1" />
+                        <JFXListView layoutX="190.0" layoutY="10.0" style="-fx-border-radius: 10; -fx-border-color: blue; -fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
          </center>
          <top>
-            <StackPane prefHeight="50.0" BorderPane.alignment="CENTER" />
+            <StackPane prefHeight="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="107.0" text="Grammar">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children></StackPane>
          </top>
          <left>
             <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="searchText" onKeyReleased="#renderListWord" prefWidth="240.0" promptText="Find word..." />
-                  <ListView fx:id="listEnglish" editable="true" onMouseClicked="#getEnglishWord" prefHeight="300.0" prefWidth="200.0">
+
+                  <TextField fx:id="searchText" onKeyReleased="#renderListWord" prefHeight="30.0" prefWidth="200.0" promptText="Find word..." style="-fx-background-radius: 30;" />
+                  <JFXListView fx:id="listEnglish" onMouseClicked="#getEnglishWord" prefHeight="273.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-cursor: hand; -fx-border-color: orange; -fx-border-radius: 15;">
                      <VBox.margin>
-                        <Insets top="30.0" />
+                        <Insets top="49.0" />
                      </VBox.margin>
-                     <effect>
-                        <Blend />
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></ListView>
+                  </JFXListView>
                </children>
                <BorderPane.margin>
                   <Insets left="10.0" right="10.0" />
