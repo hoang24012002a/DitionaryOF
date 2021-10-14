@@ -28,6 +28,7 @@ public class DictionaryManagement {
             k.getWordsArray().get(index).add(V);
         }
         return k.getWordsArray();
+
     }
 
 }
