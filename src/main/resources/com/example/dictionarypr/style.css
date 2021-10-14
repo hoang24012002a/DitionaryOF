@@ -1,21 +1,26 @@
-#back_ground{
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100&display=swap');
+
+.label{
+    -fx-font-family: 'Noto Sans Mono';
+    -fx-text-fill: color-crimson;
+    -fx-font-size: 22pt;
+    -fx-font-weight: regular;
+}
+
+#back_ground_pane{
     -fx-background-color: linear-gradient(to right, #ffefba, #ffffff);
-    -fx-background-radius: 30;
+    -fx-background-image: url('');
 }
 
 #button_bar{
     -fx-background-color: linear-gradient(#c6ffdd, #fbd786, #f7797d);
     -fx-background-radius: 30;
-
 }
 
 @font-face {
   src: url(“com/example/dictionarypr/font/LemonJellyPersonalUse-dEqR.ttf”);
 }
-
-/*#avatar_name {
-  -fx-font-family: “LemonJellyPersonalUse”;
-}*/
 
 #mag_glass{
     fx-background-image: none;
