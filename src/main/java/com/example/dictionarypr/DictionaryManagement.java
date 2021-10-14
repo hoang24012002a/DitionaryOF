@@ -1,5 +1,4 @@
 package com.example.dictionarypr;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,8 +29,5 @@ public class DictionaryManagement {
         }
         return k.getWordsArray();
     }
-
-
-
 
 }

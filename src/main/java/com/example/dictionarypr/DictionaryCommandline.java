@@ -1,9 +1,5 @@
 package com.example.dictionarypr;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class DictionaryCommandline {
 
     private DictionaryManagement d = new DictionaryManagement();
@@ -12,12 +8,12 @@ public class DictionaryCommandline {
     public void showAllWords() {
         System.out.println("No\t\t|English\t\t\t|Vietnamese");
         int count = 1;
-        for(int j = 0; j <26 ; j++) {
-            for(int i = 0; i < d.getK().getWordsArray().get(j).size(); i++) {
-                if(d.getK().getWordsArray().get(j).get(i).getWord_target().length() < 3) {
+        for (int j = 0; j <26; j++) {
+            for (int i = 0; i < d.getK().getWordsArray().get(j).size(); i++) {
+                if (d.getK().getWordsArray().get(j).get(i).getWord_target().length() < 3) {
                     System.out.print(count + "\t\t|" + d.getK().getWordsArray().get(j).get(i).getWord_target());
                     System.out.println("\t\t\t\t\t|" + d.getK().getWordsArray().get(j).get(i).getWord_explain());
-                }else if(d.getK().getWordsArray().get(j).get(i).getWord_target().length() < 7) {
+                } else if (d.getK().getWordsArray().get(j).get(i).getWord_target().length() < 7) {
                     System.out.print(count + "\t\t|" + d.getK().getWordsArray().get(j).get(i).getWord_target());
                     System.out.println("\t\t\t\t|" + d.getK().getWordsArray().get(j).get(i).getWord_explain());
                 } else if (d.getK().getWordsArray().get(j).get(i).getWord_target().length() <= 10) {
@@ -36,11 +32,6 @@ public class DictionaryCommandline {
     public void dictionaryBasic() {
         d.insertFromCommandline();
         showAllWords();
-    }
-
-    public static void main(String[] args) {
-        DictionaryCommandline f = new DictionaryCommandline();
-        f.dictionaryBasic();
     }
 
 }
