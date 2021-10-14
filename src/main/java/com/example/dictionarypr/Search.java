@@ -63,7 +63,7 @@ public class Search {
             Label label = new Label();
             if (item != null) {
                 label.setText(item);
-                label.setFont(new Font("Cambria", 16));
+                label.setFont(new Font("Cambria", 25));
                 label.setPrefWidth(172);
                 label.setPrefHeight(28);
                 setGraphic(label);
