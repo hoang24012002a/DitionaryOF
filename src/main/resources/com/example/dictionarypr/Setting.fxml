@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXSlider?>
-<?import com.jfoenix.controls.JFXToggleButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane fx:id="setting_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Setting">
+<Pane fx:id="settingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Setting">
    <children>
-      <JFXToggleButton fx:id="men_voice_button" layoutX="204.0" layoutY="114.0" prefHeight="111.0" prefWidth="206.0" text="Men" />
-      <JFXSlider fx:id="speed_voice_button" blockIncrement="0.1" layoutX="224.0" layoutY="265.0" majorTickUnit="20.0" max="2.0" min="0.5" minorTickCount="10" prefHeight="74.0" prefWidth="182.0" showTickLabels="true" showTickMarks="true" value="1.0" />
-      <ImageView fx:id="speed_icon" fitHeight="16.0" fitWidth="16.0" layoutX="188.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextArea fx:id="engText" layoutX="23.0" layoutY="65.0" prefHeight="146.0" prefWidth="354.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <Label fx:id="titleLabel" layoutX="223.0" layoutY="14.0" prefHeight="27.0" prefWidth="177.0" text="Translate paragraph" textAlignment="CENTER">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="viText" layoutX="256.0" layoutY="306.0" prefHeight="146.0" prefWidth="354.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="483.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/speed_icon.png" />
+            <Image url="@images/united-kingdom_128.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="84.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/vietnam128_2.png" />
          </image>
       </ImageView>
    </children>
