@@ -9,57 +9,57 @@
 <?import javafx.scene.text.*?>
 
 <Pane fx:id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" style="-fx-background-radius: 30;" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Home">
-   <children>
-      <ImageView fx:id="ielts_imane" fitHeight="354.0" fitWidth="630.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/ielts_bkr.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="ticker_image" fitHeight="146.0" fitWidth="270.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/yellow_label_bkr.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </ImageView>
-      <VBox fx:id="vbox_list" layoutX="14.0" layoutY="371.0" prefHeight="115.0" prefWidth="155.0">
-         <children>
-            <Label alignment="CENTER" prefHeight="18.0" prefWidth="122.0" text="Made by">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label prefHeight="18.0" prefWidth="142.0" text="Vũ Duy Hoàng">
-               <VBox.margin>
-                  <Insets top="4.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="Vũ Văn Tuấn">
-               <VBox.margin>
-                  <Insets top="4.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="Nguyễn Văn Trường">
-               <VBox.margin>
-                  <Insets top="4.0" />
-               </VBox.margin>
-            </Label>
-         </children>
-      </VBox>
-      <ImageView fx:id="github_icon" fitHeight="24.0" fitWidth="24.0" layoutX="308.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/github_icon.png" />
-         </image>
-      </ImageView>
-      <Hyperlink fx:id="link_git" layoutX="332.0" layoutY="367.0" onAction="#setLinkGit" prefHeight="23.0" prefWidth="46.0" text="Github" />
-      <JFXTextArea fx:id="thank_text" focusColor="#5400fc" layoutX="313.0" layoutY="396.0" prefHeight="94.0" prefWidth="309.0" text="Send a thanks to everyone's contribution. Please contribute your opinion in the Github link above">
-         <font>
-            <Font size="15.0" />
-         </font></JFXTextArea>
-      <Label fx:id="special_thank_label" layoutX="428.0" layoutY="370.0" prefHeight="17.0" prefWidth="116.0" text="Special Thanks">
-         <font>
-            <Font size="17.0" />
-         </font></Label>
-   </children>
+    <children>
+        <ImageView fx:id="ielts_imane" fitHeight="354.0" fitWidth="630.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/ielts_bkr.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="ticker_image" fitHeight="146.0" fitWidth="270.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/yellow_label_bkr.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </ImageView>
+        <VBox fx:id="vbox_list" layoutX="14.0" layoutY="371.0" prefHeight="115.0" prefWidth="155.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="18.0" prefWidth="122.0" text="Made by">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="18.0" prefWidth="142.0" text="Vũ Duy Hoàng">
+                    <VBox.margin>
+                        <Insets top="4.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Vũ Văn Tuấn">
+                    <VBox.margin>
+                        <Insets top="4.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Nguyễn Văn Trường">
+                    <VBox.margin>
+                        <Insets top="4.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+        <ImageView fx:id="github_icon" fitHeight="24.0" fitWidth="24.0" layoutX="308.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/github_icon.png" />
+            </image>
+        </ImageView>
+        <Hyperlink fx:id="link_git" layoutX="332.0" layoutY="367.0" onAction="#setLinkGit" prefHeight="23.0" prefWidth="46.0" text="Github" />
+        <JFXTextArea fx:id="thank_text" focusColor="#5400fc" layoutX="313.0" layoutY="396.0" prefHeight="94.0" prefWidth="309.0" text="Send a thanks to everyone's contribution. Please contribute your opinion in the Github link above">
+            <font>
+                <Font size="15.0" />
+            </font></JFXTextArea>
+        <Label fx:id="special_thank_label" layoutX="428.0" layoutY="370.0" prefHeight="17.0" prefWidth="116.0" text="Special Thanks">
+            <font>
+                <Font size="17.0" />
+            </font></Label>
+    </children>
 </Pane>

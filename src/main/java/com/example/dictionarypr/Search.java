@@ -69,7 +69,7 @@ public class Search {
             }
             else {
                 label.setText(item);
-                label.setFont(new Font("Cambria", 16));
+                label.setFont(new Font("Cambria", 25));
                 label.setPrefWidth(172);
                 label.setPrefHeight(28);
                 label.setCursor(Cursor.HAND);
