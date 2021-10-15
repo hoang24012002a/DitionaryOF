@@ -13,7 +13,7 @@ public class Dictionary {
 
         /** Hàm khởi tạo có chức năng tạo ArrayList 2 chiều cho 26 chữ cái đầu. */
         public Dictionary() {
-            for(int i = 0; i < 26; i++) {
+            for(int i = 0; i < 27; i++) {
                 wordsArray.add(new ArrayList<Word>());
             }
         }

@@ -2,9 +2,14 @@ package com.example.dictionarypr;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.sql.*;
 
 public class DictionaryCommandline {
     private DictionaryManagement d = new DictionaryManagement();
+
+    public DictionaryCommandline() throws IOException {
+        d.insertFromFile();
+    }
 
     /** Hàm partition(ArrayList<Word> arr, int low, int high) của sắp xếp Quicksort. */
     private int partition(ArrayList<Word> arr, int low, int high) {
@@ -33,7 +38,7 @@ public class DictionaryCommandline {
 
     /** Hàm có chức năng sắp xếp 26 arrayList<Word> theo thứ tự chữ cái anphabet của từ. */
     private void sort_arrayWord() {
-        for(int i = 0; i < 26; i++) {
+        for(int i = 0; i < 27; i++) {
             sort(d.getK().getWordsArray().get(i),0,d.getK().getWordsArray().get(i).size()-1);
         }
     }
@@ -42,7 +47,7 @@ public class DictionaryCommandline {
     public void showAllWords() {
         System.out.println("No\t\t|English\t\t\t|Vietnamese");
         int count = 1;
-        for(int j = 0; j <26 ; j++) {
+        for(int j = 0; j <27 ; j++) {
             for(int i = 0; i < d.getK().getWordsArray().get(j).size(); i++) {
                 if(d.getK().getWordsArray().get(j).get(i).getWord_target().length() < 3) {
                     System.out.print(count + "\t\t|" + d.getK().getWordsArray().get(j).get(i).getWord_target());
@@ -62,15 +67,6 @@ public class DictionaryCommandline {
         }
     }
 
-    /** Hàm có chức năng gọi hàm insertFromFile() và sắp xếp các từ đầu vào. */
-    public void inputFromText() {
-        try {
-            d.insertFromFile();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-        sort_arrayWord();
-    }
 
     /** Hàm có chức năng gọi hàm dictionaryLookup(String English). */
     public String vLookup(String English) {
@@ -80,6 +76,7 @@ public class DictionaryCommandline {
     /** Hàm có chức năng gọi hàm dictionaryExportToFile(). */
     public void exportToFile () {
         try {
+            sort_arrayWord();
             d.dictionaryExportToFile();
         } catch(IOException e) {
             e.printStackTrace();
@@ -124,7 +121,7 @@ public class DictionaryCommandline {
         if(keyWord.length() == 0){
             return null;
         }
-        int n = (int)keyWord.charAt(0)-97;
+        int n = (int)keyWord.charAt(0)-96;
         for (int i = 0; i < d.getK().getWordsArray().get(n).size(); i++) {
             if(d.getK().getWordsArray().get(n).get(i).getWord_target().startsWith(keyWord)) {
                 searchArray.add(d.getK().getWordsArray().get(n).get(i));
@@ -135,6 +132,25 @@ public class DictionaryCommandline {
             return searchArray;
         }
         return null;
+    }
+
+    public ArrayList<ArrayList<Word>> MySQLCon() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/chinhsua", "root", "");
+            //db_demo là tên của database, root là username và password là rỗng
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from tbl_edict");
+            while (rs.next()){
+                System.out.println(rs.getString(2)+rs.getString(3));
+                d.addNewWord(rs.getString(2), rs.getString(3));
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return d.getK().getWordsArray();
     }
 
 }

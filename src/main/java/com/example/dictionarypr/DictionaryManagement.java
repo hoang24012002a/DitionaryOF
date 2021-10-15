@@ -29,6 +29,21 @@ public class DictionaryManagement {
         return k;
     }
 
+    private Word binarySearch1(ArrayList<Word> arr, String key) {
+        int low = 0;
+        int high = arr.size() - 1;
+        while (high >= low) {
+            int mid = (low + high) / 2;
+            if (arr.get(mid).getWord_target().compareTo(key)>0)
+                high = mid - 1;
+            else if (arr.get(mid).getWord_target().equals(key))
+                return arr.get(mid);
+            else
+                low = mid + 1;
+        }
+        return null; /* Now high < low, key not found */
+    }
+
 /*
     public void insertFromCommandline() {
         Scanner scan = new Scanner(System.in);
@@ -51,7 +66,7 @@ public class DictionaryManagement {
      * Hàm insertFromFile() nhập liệu từ điển từ tệp dictionaries.txt.
      * @throws IOException ngoại lệ xảy ra khi tệp dictionaries.txt không được tìm thấy.
      */
-    public void insertFromFile() throws IOException {
+    public ArrayList<ArrayList<Word>> insertFromFile() throws IOException {
         File file = new File(FILE);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
@@ -66,7 +81,7 @@ public class DictionaryManagement {
                 target = target.toLowerCase();
                 explain = explain.toLowerCase();
                 Word V = new Word(target, explain);
-                k.getWordsArray().get((int)V.getWord_target().charAt(0)-97).add(V);
+                k.getWordsArray().get((int)V.getWord_target().charAt(0)-96).add(V);
                 target = "";explain = "";
                 dem = 0;
             } else if (dem <1 )  {
@@ -75,6 +90,7 @@ public class DictionaryManagement {
                 explain = explain + (char) c;
             }
         }
+        return getK().getWordsArray();
     }
 
     /**
@@ -84,14 +100,14 @@ public class DictionaryManagement {
      */
     public String dictionaryLookup(String English) {
         English = English.toLowerCase();
-        int n = (int)English.charAt(0)-97;
+        int n = (int)English.charAt(0)-96;
         /*for (int i = 0; i < k.getWordsArray().get(n).size(); i++)
         {
             if(k.getWordsArray().get(n).get(i).getWord_target().equals(English)) {
                 return k.getWordsArray().get(n).get(i).getWord_explain();
             }
         }*/
-        return binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English).getWord_explain();
+        return binarySearch1(k.getWordsArray().get(n),English).getWord_explain();
     }
 
     /**
@@ -100,13 +116,14 @@ public class DictionaryManagement {
      * @param Vietnamese argument.
      */
     public void addNewWord(String English, String Vietnamese) {
-        English.toLowerCase();
-        Vietnamese.toLowerCase();
+        English = English.toLowerCase();
+        Vietnamese = Vietnamese.toLowerCase();
         Word V = new Word(English,Vietnamese);
-        int n = (int)English.charAt(0)-97;
+        int n = (int)English.charAt(0)-96;
+        if(n < 0) { n = 0;}
         Word F = binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English);
         if(F == null) {
-            k.getWordsArray().get((int)V.getWord_target().charAt(0)-97).add(V);
+                k.getWordsArray().get(n).add(V);
         } else {
             String word_explain = F.getWord_explain() + ", " + Vietnamese;
             F.setWord_explain(word_explain);
@@ -122,7 +139,8 @@ public class DictionaryManagement {
     public boolean fixWord(String English, String Vietnamese) {
         English = English.toLowerCase();
         Vietnamese = Vietnamese.toLowerCase();
-        int n = (int)English.charAt(0)-97;
+        int n = (int)English.charAt(0)-96;
+        if(n < 0) { n = 0;}
         Word F = binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English);
         if(F != null) {
             F.setWord_explain(Vietnamese);
@@ -138,7 +156,8 @@ public class DictionaryManagement {
      */
     public boolean deleteWord(String English){
         English = English.toLowerCase();
-        int n = (int)English.charAt(0)-97;
+        int n = (int)English.charAt(0)-96;
+        if(n < 0) { n = 0;}
         Word F = binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English);
         if(F != null) {
             k.getWordsArray().get(n).remove(F);
@@ -155,7 +174,7 @@ public class DictionaryManagement {
         File file = new File(FILE);
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-        for(int i = 0; i < 26 ; i++) {
+        for(int i = 0; i < 27 ; i++) {
             for (int j = 0; j < k.getWordsArray().get(i).size(); j++) {
                 outputStreamWriter.write(k.getWordsArray().get(i).get(j).getWord_target());
                 outputStreamWriter.write("\t");
