@@ -93,28 +93,12 @@ public class DictionaryManagement {
         return getK().getWordsArray();
     }
 
-    public ArrayList<Word> insertFto1Array() throws IOException {
-        File file = new File(FILE);
-        InputStream inputStream = new FileInputStream(file);
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-
-        int c, dem = 0;
-        String target = "";
-        String explain = "";
-        while ((c = inputStreamReader.read()) != -1) {
-            if (Character.toString((char)c).equals("\t")) {
-                dem++;
-            } else if (Character.toString((char)c).equals("\n")) {
-                target = target.toLowerCase();
-                explain = explain.toLowerCase();
-                Word V = new Word(target, explain);
-                getK().getMyListWord().add(V);
-                target = "";explain = "";
-                dem = 0;
-            } else if (dem <1 )  {
-                target = target + (char) c;
-            } else if (!Character.toString((char)c).equals("\r")){
-                explain = explain + (char) c;
+    public ArrayList<Word> insertFto1Array() {
+        for(int j = 0; j <27 ; j++) {
+            for (int i = 0; i < getK().getWordsArray().get(j).size(); i++) {
+                if (k.getWordsArray().get(j).get(i) != null) {
+                    k.getMyListWord().add(k.getWordsArray().get(j).get(i));
+                }
             }
         }
         return getK().getMyListWord();

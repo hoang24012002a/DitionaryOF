@@ -7,7 +7,7 @@ import java.sql.*;
 public class DictionaryCommandline {
     private DictionaryManagement d = new DictionaryManagement();
 
-    public DictionaryCommandline() throws IOException {
+    public DictionaryCommandline() {
         d.insertFto1Array();
     }
 
@@ -45,13 +45,8 @@ public class DictionaryCommandline {
 
     /** Hàm có chức năng trả về mảng dữ liệu từ điển cá nhân. */
     public ArrayList<Word> myList() {
-        try {
             sort_arrayWord();
             return d.insertFto1Array();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     /** Hàm showAllWords() có chức năng hiển thị danh sách dữ liệu từ điển. */
@@ -154,7 +149,7 @@ public class DictionaryCommandline {
                     "jdbc:mysql://localhost:3306/chinhsua", "root", "");
             //chinhsua là tên của database, root là username và password là rỗng
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from tbl_edict");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM tbl_edict WHERE word LIKE '" + keyWord + "%'");
             while (rs.next()){
                 if (rs.getString(2).startsWith(keyWord)) {
                     Word V = new Word(rs.getString(2), rs.getString(3));
