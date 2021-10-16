@@ -8,7 +8,7 @@ public class DictionaryCommandline {
     private DictionaryManagement d = new DictionaryManagement();
 
     public DictionaryCommandline() throws IOException {
-        d.insertFromFile();
+        d.insertFto1Array();
     }
 
     /** Hàm partition(ArrayList<Word> arr, int low, int high) của sắp xếp Quicksort. */
@@ -41,6 +41,17 @@ public class DictionaryCommandline {
         for(int i = 0; i < 27; i++) {
             sort(d.getK().getWordsArray().get(i),0,d.getK().getWordsArray().get(i).size()-1);
         }
+    }
+
+    /** Hàm có chức năng trả về mảng dữ liệu từ điển cá nhân. */
+    public ArrayList<Word> myList() {
+        try {
+            sort_arrayWord();
+            return d.insertFto1Array();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /** Hàm showAllWords() có chức năng hiển thị danh sách dữ liệu từ điển. */
@@ -117,13 +128,13 @@ public class DictionaryCommandline {
      */
     public ArrayList<Word> dictionarySearcher(String keyWord) {
         ArrayList<Word> searchArray = new ArrayList<Word>();
-        keyWord.toLowerCase();
-        if(keyWord.length() == 0){
+        keyWord = keyWord.toLowerCase();
+        if (keyWord.length() == 0) {
             return null;
         }
         int n = (int)keyWord.charAt(0)-96;
         for (int i = 0; i < d.getK().getWordsArray().get(n).size(); i++) {
-            if(d.getK().getWordsArray().get(n).get(i).getWord_target().startsWith(keyWord)) {
+            if (d.getK().getWordsArray().get(n).get(i).getWord_target().startsWith(keyWord)) {
                 searchArray.add(d.getK().getWordsArray().get(n).get(i));
             }
 
@@ -134,23 +145,28 @@ public class DictionaryCommandline {
         return null;
     }
 
-    public ArrayList<ArrayList<Word>> MySQLCon() {
-        try {
+    public ArrayList<Word> MySQLCon(String keyWord) {
+       keyWord = keyWord.toLowerCase();
+       ArrayList<Word> arr = new ArrayList<>();
+       try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/chinhsua", "root", "");
-            //db_demo là tên của database, root là username và password là rỗng
+            //chinhsua là tên của database, root là username và password là rỗng
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from tbl_edict");
             while (rs.next()){
-                System.out.println(rs.getString(2)+rs.getString(3));
-                d.addNewWord(rs.getString(2), rs.getString(3));
+                if (rs.getString(2).startsWith(keyWord)) {
+                    Word V = new Word(rs.getString(2), rs.getString(3));
+                    arr.add(V);
+                }
             }
             con.close();
-        } catch (Exception e) {
+       } catch (Exception e) {
             System.out.println(e);
-        }
-        return d.getK().getWordsArray();
+       }
+       if(arr.size() == 0){return null;}
+       return arr;
     }
 
 }

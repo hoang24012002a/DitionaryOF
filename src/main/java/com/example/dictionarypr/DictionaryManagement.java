@@ -93,6 +93,33 @@ public class DictionaryManagement {
         return getK().getWordsArray();
     }
 
+    public ArrayList<Word> insertFto1Array() throws IOException {
+        File file = new File(FILE);
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+
+        int c, dem = 0;
+        String target = "";
+        String explain = "";
+        while ((c = inputStreamReader.read()) != -1) {
+            if (Character.toString((char)c).equals("\t")) {
+                dem++;
+            } else if (Character.toString((char)c).equals("\n")) {
+                target = target.toLowerCase();
+                explain = explain.toLowerCase();
+                Word V = new Word(target, explain);
+                getK().getMyListWord().add(V);
+                target = "";explain = "";
+                dem = 0;
+            } else if (dem <1 )  {
+                target = target + (char) c;
+            } else if (!Character.toString((char)c).equals("\r")){
+                explain = explain + (char) c;
+            }
+        }
+        return getK().getMyListWord();
+    }
+
     /**
      * Hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
      * @param English argument
@@ -101,12 +128,6 @@ public class DictionaryManagement {
     public String dictionaryLookup(String English) {
         English = English.toLowerCase();
         int n = (int)English.charAt(0)-96;
-        /*for (int i = 0; i < k.getWordsArray().get(n).size(); i++)
-        {
-            if(k.getWordsArray().get(n).get(i).getWord_target().equals(English)) {
-                return k.getWordsArray().get(n).get(i).getWord_explain();
-            }
-        }*/
         return binarySearch1(k.getWordsArray().get(n),English).getWord_explain();
     }
 
