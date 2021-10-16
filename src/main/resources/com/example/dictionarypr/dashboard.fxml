@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" style="-fx-border-radius: 20;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
+<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" style="-fx-border-radius: 20;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
    <left>
       <VBox fx:id="button_bar" prefHeight="600.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="0.0">
          <children>

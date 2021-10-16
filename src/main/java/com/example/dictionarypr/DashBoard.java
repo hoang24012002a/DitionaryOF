@@ -18,7 +18,7 @@ public class DashBoard extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+//        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -1,5 +1,9 @@
 package com.example.dictionarypr;
 
+import com.jfoenix.controls.JFXSlider;
+import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
+
 /**
  * @Tuan.
  * Tham khao tai day https://www.youtube.com/watch?v=Ln0BFlx6R4w
@@ -7,4 +11,12 @@ package com.example.dictionarypr;
  * */
 
 public class Setting {
+    @FXML
+    private JFXSlider speedSlider;
+
+    @FXML
+    protected void action(MouseEvent mouseEvent) {
+        int speed = (int) speedSlider.getValue();
+        System.out.println(speed);
+    }
 }

@@ -4,9 +4,9 @@
 }
 
 @font-face{
-  font-family: 'Lemon';
-  font-weight: 400;
-  src: url('../font/LemonJellyPersonalUse-dEqR.ttf') format('truetype');
+    font-family: 'Lemon';
+    font-weight: 400;
+    src: url('./font/LemonJellyPersonalUse-dEqR.ttf') format('truetype');
 }
 #viWord{
     -fx-font-family: 'Lemon';

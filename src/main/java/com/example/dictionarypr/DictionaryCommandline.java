@@ -14,19 +14,19 @@ public class DictionaryCommandline {
     public void showAllWords() {
         System.out.println("No\t\t|English\t\t\t|Vietnamese");
         for(int i = 0; i < d.getK().getWordsArray().size(); i++) {
-                if(d.getK().getWordsArray().get(i).getWord_target().length() < 3) {
-                    System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
-                    System.out.println("\t\t\t\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
-                }else if(d.getK().getWordsArray().get(i).getWord_target().length() < 7) {
-                    System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
-                    System.out.println("\t\t\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
-                } else if (d.getK().getWordsArray().get(i).getWord_target().length() <= 10) {
-                    System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
-                    System.out.println("\t\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
-                } else {
-                    System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
-                    System.out.println("\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
-                }
+            if(d.getK().getWordsArray().get(i).getWord_target().length() < 3) {
+                System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
+                System.out.println("\t\t\t\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
+            }else if(d.getK().getWordsArray().get(i).getWord_target().length() < 7) {
+                System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
+                System.out.println("\t\t\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
+            } else if (d.getK().getWordsArray().get(i).getWord_target().length() <= 10) {
+                System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
+                System.out.println("\t\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
+            } else {
+                System.out.print(i + 1 + "\t\t|" + d.getK().getWordsArray().get(i).getWord_target());
+                System.out.println("\t\t|" + d.getK().getWordsArray().get(i).getWord_explain());
+            }
         }
     }
 
@@ -52,7 +52,6 @@ public class DictionaryCommandline {
     }
 
     public void add(String English, String Vietnamese) {
-
         d.addNewWord(English,Vietnamese);
     }
 
