@@ -34,7 +34,7 @@
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor></Label>
-                  <JFXButton layoutX="258.0" layoutY="28.0" prefHeight="32.0" prefWidth="126.0" style="-fx-background-radius: 30; -fx-cursor: hand; -fx-border-color: purple; -fx-border-radius: 30;" text="/ˈapəl/" AnchorPane.bottomAnchor="389.6" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="25.200000000000045" AnchorPane.topAnchor="28.0">
+                  <JFXButton layoutX="258.0" layoutY="28.0" prefHeight="32.0" prefWidth="126.0" scaleX="0.9" scaleY="0.9" style="-fx-background-radius: 30; -fx-cursor: hand; -fx-border-color: purple; -fx-border-radius: 30;" text="/ˈapəl/" AnchorPane.bottomAnchor="389.6" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="25.200000000000045" AnchorPane.topAnchor="28.0">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -43,7 +43,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton ellipsisString="" layoutX="179.0" layoutY="28.0" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-background-radius: 20; -fx-cursor: hand;" text="Mark">
+                  <JFXButton ellipsisString="" layoutX="179.0" layoutY="28.0" scaleX="0.9" scaleY="0.9" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-background-radius: 20; -fx-cursor: hand;" text="Mark">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
