@@ -1,8 +1,14 @@
 package com.example.dictionarypr;
 
 import com.jfoenix.controls.JFXSlider;
+import com.jfoenix.controls.JFXTextArea;
 import javafx.fxml.FXML;
+import javafx.scene.input.InputEvent;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
 
 /**
  * @Tuan.
@@ -11,12 +17,17 @@ import javafx.scene.input.MouseEvent;
  * */
 
 public class Setting {
-    @FXML
-    private JFXSlider speedSlider;
+    private TextToText textToTextEngine = new TextToText();
 
     @FXML
-    protected void action(MouseEvent mouseEvent) {
-        int speed = (int) speedSlider.getValue();
-        System.out.println(speed);
+    private JFXTextArea engText;
+    @FXML
+    private JFXTextArea viText;
+
+    @FXML
+    protected void renderText(KeyEvent keyEvent) throws IOException {
+        String eng = engText.getText();
+        String vi = textToTextEngine.translate(eng);
+        viText.setText(vi);
     }
 }
