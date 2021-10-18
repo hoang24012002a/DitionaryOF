@@ -9,7 +9,7 @@ public class DictionaryManagement {
     private final static String FILE = "dictionaries.txt";
 
     /** Hàm tìm kiếm nhị phân phục vụ cho tìm kiếm nhanh hơn. */
-    private Word binarySearch(ArrayList<Word> arr, int l, int r, String x) {
+    /*private Word binarySearch(ArrayList<Word> arr, int l, int r, String x) {
         if (r >= l) {
             int mid = l + (r - l) / 2;
             // Nếu phần tử có ở chính giữa
@@ -23,7 +23,7 @@ public class DictionaryManagement {
         }
         // Nếu phầnt tử không có trong mảng
         return null;
-    }
+    }*/
 
     public Dictionary getK() {
         return k;
@@ -126,7 +126,7 @@ public class DictionaryManagement {
         Word V = new Word(English,Vietnamese);
         int n = (int)English.charAt(0)-96;
         if(n < 0) { n = 0;}
-        Word F = binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English);
+        Word F = binarySearch1(k.getWordsArray().get(n),English);
         if(F == null) {
                 k.getWordsArray().get(n).add(V);
         } else {
@@ -146,7 +146,7 @@ public class DictionaryManagement {
         Vietnamese = Vietnamese.toLowerCase();
         int n = (int)English.charAt(0)-96;
         if(n < 0) { n = 0;}
-        Word F = binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English);
+        Word F = binarySearch1(k.getWordsArray().get(n),English);
         if(F != null) {
             F.setWord_explain(Vietnamese);
             return true;
@@ -163,7 +163,7 @@ public class DictionaryManagement {
         English = English.toLowerCase();
         int n = (int)English.charAt(0)-96;
         if(n < 0) { n = 0;}
-        Word F = binarySearch(k.getWordsArray().get(n),0,k.getWordsArray().get(n).size()-1,English);
+        Word F = binarySearch1(k.getWordsArray().get(n),English);
         if(F != null) {
             k.getWordsArray().get(n).remove(F);
             return true;

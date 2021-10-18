@@ -133,6 +133,7 @@ public class DictionaryCommandline {
                 searchArray.add(d.getK().getWordsArray().get(n).get(i));
             }
 
+
         }
         if (searchArray.size() > 0) {
             return searchArray;
