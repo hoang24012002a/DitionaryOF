@@ -9,6 +9,7 @@ public class Word {
         return word_target;
     }
 
+    // setter cho thuộc tính word_taget.
     public void setWord_target(String word_target) {
         this.word_target = word_target;
     }
@@ -18,13 +19,16 @@ public class Word {
         return word_explain;
     }
 
+    // setter cho thuộc tính word_taget.
     public void setWord_explain(String word_explain) {
         this.word_explain = word_explain;
     }
 
+
     public Word() {
     }
 
+    /**Hàm khởi tạo 2.*/
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
         this.word_explain = word_explain;

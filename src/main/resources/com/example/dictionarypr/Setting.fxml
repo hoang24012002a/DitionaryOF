@@ -8,7 +8,7 @@
 
 <Pane fx:id="settingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Setting">
    <children>
-      <JFXTextArea fx:id="engText" layoutX="23.0" layoutY="65.0" onKeyPressed="#renderText" prefHeight="146.0" prefWidth="354.0">
+      <JFXTextArea fx:id="engText" layoutX="23.0" layoutY="65.0" prefHeight="146.0" prefWidth="354.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -33,5 +33,6 @@
             <Image url="@images/vietnam128_2.png" />
          </image>
       </ImageView>
+      <Button layoutX="305.0" layoutY="238.0" mnemonicParsing="false" onAction="#renderText" text="Button" />
    </children>
 </Pane>

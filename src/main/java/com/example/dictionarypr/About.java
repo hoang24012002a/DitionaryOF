@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Path;
@@ -47,7 +48,7 @@ public class About implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Word> listWord = dictionaryCommandline.dictionarySearcher("");
+        ArrayList<Word> listWord = dictionaryCommandline.myList();
         engineSpeech = new TextToSpeech();
         contentVbox.getChildren().removeAll();
         for (int i = 0; i < listWord.size(); i++) {
@@ -98,6 +99,8 @@ public class About implements Initializable {
         delBtn.setOnAction((new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 dictionaryCommandline.delete(targetWord);
+                //contentVbox.getChildren().remove(hBox);
+                System.out.println(contentVbox.getChildren().indexOf(hBox));
             }
         }));
         // create button speak;
@@ -127,6 +130,16 @@ public class About implements Initializable {
         HBox.setMargin(text, new Insets(2.0, 0, 0, 28.0));
         HBox.setMargin(delBtn, new Insets(1, 0, 0, 94.0));
         HBox.setMargin(speakBtn, new Insets(0, 0, 0,3.0));
+        hBox.setOnMouseEntered((new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                hBox.setStyle("-fx-background-color: yellow");
+            }
+        }));
+        hBox.setOnMouseExited((new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                hBox.setStyle("-fx-background-color: white");
+            }
+        }));
         return hBox;
     }
 }

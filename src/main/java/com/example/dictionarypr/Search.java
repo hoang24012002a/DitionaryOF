@@ -39,7 +39,9 @@ public class Search {
     protected void renderListWord(KeyEvent actionEvent) {
         String text = searchText.getText();
         ObservableList<String> observableList = FXCollections.observableArrayList();
-        engWordList = dictionaryCommandline.dictionarySearcher(text);
+        if (!text.equals("")) {
+            engWordList = dictionaryCommandline.MySQLCon(text);
+        }
         if (engWordList != null) {
             for (Word value : engWordList) {
                 observableList.add(value.getWord_target());
@@ -113,7 +115,6 @@ public class Search {
         String viWordAdd = viWord.getText();
         if (!engWordAdd.equals("") && !viWordAdd.equals("")) {
             dictionaryCommandline.add(engWordAdd, viWordAdd);
-            dictionaryCommandline.ExportToFile();
         }
         System.out.print(engWordAdd + "\n" + viWordAdd);
     }
