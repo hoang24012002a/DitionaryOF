@@ -17,5 +17,6 @@ public class Setting {
         String eng = engText.getText();
         String vi = textToTextEngine.translate(eng);
         viText.setText(vi);
+
     }
 }
