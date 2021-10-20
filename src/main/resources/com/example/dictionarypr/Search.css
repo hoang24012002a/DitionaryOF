@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+
+#searchText{
+    -fx-text-inner-color:linear-gradient(from 0% 0% to 100% 200%, repeat, black 0%, darkblue 50%);
+    -fx-text-inner-size: 16px;
+    -fx-font-size: 12;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+    -fx-font-weight: italic;
+    -fx-strikethrough: true;
+}
+
+#grammarLabel{
+    -fx-alignment: center;
+    -fx-font-family: 'Festive', cursive;
+    -fx-font-size: 30px;
+}
+
+#engWord{
+    -fx-font-size: 24px;
+    -fx-font-family: 'Ubuntu', sans-serif;
+}
+
+#vietWord{
+    -fx-font-size: 16px;
+    -fx-font-family:'Ubuntu', sans-serif;
+}
+
+#markJFXButton:hover{
+    -fx-background-color:
+            linear-gradient(#e68400, #ffd65b),
+            linear-gradient(#f2ba44, #ffef84),
+            linear-gradient(#efaa22, #ffea6a),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+#speakJFXButton:hover{
+  -fx-background-color:#A1FFCE;
+  -fx-text-fill:black;
+  -fx-border-color:#168FC1;
+}
+
+#speakJFXButton:pressed{
+
+}

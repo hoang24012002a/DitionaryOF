@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" style="-fx-border-radius: 20;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
+<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" style="-fx-border-radius: 20;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
    <left>
       <VBox fx:id="button_bar" prefHeight="600.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,7 +24,7 @@
                   <Insets left="53.0" />
                </VBox.margin>
             </ImageView>
-            <Button mnemonicParsing="false" onAction="#home" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none;" stylesheets="@stylesheet.css" text="Home">
+            <Button mnemonicParsing="false" onAction="#home" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none; -fx-background-radius: 30;" stylesheets="@stylesheet.css" text="Home">
                <VBox.margin>
                   <Insets left="55.0" top="12.0" />
                </VBox.margin>
@@ -42,7 +42,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="65.0" layoutY="239.0" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none;" stylesheets="@stylesheet.css" text="Search">
+            <Button layoutX="65.0" layoutY="239.0" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none; -fx-background-radius: 30;" stylesheets="@stylesheet.css" text="Search">
                <graphic>
                   <ImageView fx:id="mag_glass1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,7 +60,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="65.0" layoutY="240.0" mnemonicParsing="false" onAction="#about" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none;" text="About">
+            <Button layoutX="65.0" layoutY="240.0" mnemonicParsing="false" onAction="#about" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none; -fx-background-radius: 30;" text="About">
                <graphic>
                   <ImageView fx:id="book_icon" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,7 +78,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#account" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none;" text="Account">
+            <Button layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#account" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none; -fx-background-radius: 30;" text="Account">
                <graphic>
                   <ImageView fx:id="man_icon" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -96,9 +96,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="10.0" layoutY="332.0" mnemonicParsing="false" onAction="#setting" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none;" text="Paragraph">
+            <Button layoutX="10.0" layoutY="332.0" mnemonicParsing="false" onAction="#setting" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none; -fx-background-radius: 30;" text="Paragraph">
                <graphic>
-                  <ImageView fx:id="setting_icon" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="setting_icon" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">
                      <image>
                         <Image url="@images/paragraph_icon.png" />
                      </image>
@@ -114,7 +114,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="65.0" layoutY="377.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none;" text="Exit">
+            <Button fx:id="exitButton" layoutX="65.0" layoutY="377.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="170.0" style="-fx-border-radius: 30; -fx-border-color: none;" text="Exit">
                <graphic>
                   <ImageView fx:id="setting_icon1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>

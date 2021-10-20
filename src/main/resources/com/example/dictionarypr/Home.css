@@ -1,6 +1,35 @@
-#ticker_image{
-    -fx-background-image: none;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+#madeLabel{
+    -fx-font-family: 'Noto Sans Mono', monospace;
+    -fx-font-size: 24px;
 }
+
+#hoangLabel{
+    -fx-font-family: 'Festive', cursive;
+    -fx-font-size: 24px;
+}
+
+#tuanLabel{
+    -fx-font-family: 'Festive', cursive;
+    -fx-font-size: 24px;
+}
+
+#truongLabel{
+    -fx-font-family: 'Festive', cursive;
+    -fx-font-size: 24px;
+}
+
+#thankLabel{
+    -fx-font-family: 'Itim', cursive;
+    -fx-font-size: 20px;
+}
+
 #homePane{
     -fx-background-radius: 30;
+    -fx-font-family: 'Roboto', sans-serif;
 }

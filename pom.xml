@@ -67,6 +67,12 @@
             <artifactId>jfoenix</artifactId>
             <version>9.0.10</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.typhon0</groupId>
+            <artifactId>AnimateFX</artifactId>
+            <version>1.2.1</version>
+            <type>pom</type>
+        </dependency>
     </dependencies>
 
     <repositories>
@@ -93,7 +99,7 @@
                 <version>0.0.6</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                         Default configuration for running with: mvn clean javafx:run
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.example.dictionarypr/com.example.dictionarypr.HelloApplication</mainClass>
