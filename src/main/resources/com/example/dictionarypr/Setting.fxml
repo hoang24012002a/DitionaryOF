@@ -19,7 +19,7 @@
             <Font name="Georgia" size="18.0" />
          </font>
       </Label>
-      <JFXTextArea fx:id="viText" layoutX="256.0" layoutY="306.0" prefHeight="146.0" prefWidth="354.0">
+      <JFXTextArea fx:id="viText" focusColor="#ff3b3b" layoutX="256.0" layoutY="306.0" prefHeight="146.0" prefWidth="354.0">
          <font>
             <Font size="14.0" />
          </font>
