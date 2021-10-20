@@ -1,7 +1,12 @@
 #accountPane{
-    -fx-background-color: linear-gradient(to left, #d9a7c7, #fffcdc);
+    -fx-background-color: none;
 }
 
 #Pane1{
     -fx-background-image: url("@images/lock_icon.jpg");
 }
+
+#delButton:hover{
+    -fx-background-color: #FF0C3A;
+}
+
