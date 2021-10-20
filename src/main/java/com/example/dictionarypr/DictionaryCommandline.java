@@ -144,7 +144,7 @@ public class DictionaryCommandline {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/db_dic", "root", "");
+                    "jdbc:mysql://localhost:3306/chinh_sua", "root", "");
             //chinhsua là tên của database, root là username và password là rỗng
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM tbl_edict WHERE word LIKE '" + keyWord + "%'");

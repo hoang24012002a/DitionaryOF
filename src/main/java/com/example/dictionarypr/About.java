@@ -35,16 +35,6 @@ public class About implements Initializable {
     public About() throws IOException {
     }
 
-//    @FXML
-//    protected void deleteWordEvent(ActionEvent clicked) {
-//        String engWord = deleteWord.getText();
-//        if (!engWord.equals("")) {
-//            if (dictionaryCommandline.delete(engWord)) {
-//                dictionaryCommandline.ExportToFile();
-//            }
-//        }
-//        deleteWord.setText("");
-//    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -96,11 +86,21 @@ public class About implements Initializable {
         delImage.setImage(new Image(path.toURI().toString()));
         delBtn.setGraphic(delImage);
         delBtn.setCursor(Cursor.HAND);
+        delBtn.setOnMouseEntered((new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent moved) {
+                delBtn.setStyle("-fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20; -fx-background-color: #FF0C3A;");
+            }
+        }));
+        delBtn.setOnMouseExited((new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent moved) {
+                delBtn.setStyle("-fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20; -fx-background-color: transparent;");
+            }
+        }));
         delBtn.setOnAction((new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                dictionaryCommandline.delete(targetWord);
-                //contentVbox.getChildren().remove(hBox);
                 System.out.println(contentVbox.getChildren().indexOf(hBox));
+                dictionaryCommandline.delete(targetWord);
+                contentVbox.getChildren().remove(hBox);
             }
         }));
         // create button speak;
@@ -130,16 +130,7 @@ public class About implements Initializable {
         HBox.setMargin(text, new Insets(2.0, 0, 0, 28.0));
         HBox.setMargin(delBtn, new Insets(1, 0, 0, 94.0));
         HBox.setMargin(speakBtn, new Insets(0, 0, 0,3.0));
-        hBox.setOnMouseEntered((new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                hBox.setStyle("-fx-background-color: yellow");
-            }
-        }));
-        hBox.setOnMouseExited((new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                hBox.setStyle("-fx-background-color: white");
-            }
-        }));
+
         return hBox;
     }
 }

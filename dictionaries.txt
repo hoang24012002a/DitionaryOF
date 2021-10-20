@@ -6,7 +6,6 @@ integrality	tính toàn bộ
 library	thư viện
 love	yêu
 map	bản đồ
-people	người
 system	hệ thống
 transform	thay đổi hoàn toàn
 translate	phiên dịch
