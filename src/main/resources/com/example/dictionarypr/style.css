@@ -8,7 +8,7 @@
 
 #button_bar{
     -fx-background-color: linear-gradient(#c6ffdd, #fbd786, #f7797d);
-    -fx-background-radius: 30;
+    -fx-background-radius: 30 30 30 0;
 }
 
 #tiltleLabel{
@@ -58,3 +58,4 @@
     -fx-text-fill: black;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
+
