@@ -105,7 +105,7 @@ public class DictionaryManagement {
 
     /**
      * Hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
-     * @param English argument
+     * @param English argument.
      * @return String.
      */
     public String dictionaryLookup(String English) {
