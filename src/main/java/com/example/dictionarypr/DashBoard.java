@@ -20,7 +20,7 @@ public class DashBoard extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         Scene scene = new Scene(root);
 //        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.getIcons().add(new Image("https://cdn-icons.flaticon.com/png/512/3285/premium/3285819.png?token=exp=1634718480~hmac=069ef30b987b478f1d2f5fa317d1ea5d"));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/app_icon.png")));
         primaryStage.setScene(scene);
         primaryStage.show();
     }
