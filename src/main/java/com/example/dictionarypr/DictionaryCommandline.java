@@ -156,6 +156,7 @@ public class DictionaryCommandline {
                     Word V = new Word(rs.getString(2), rs.getString(3));
                     arr.add(V);
                 }
+                //System.out.println(rs.getString(3).charAt(rs.getString(3).length()-1));
             }
             con.close();
        } catch (Exception e) {
@@ -163,6 +164,63 @@ public class DictionaryCommandline {
        }
        if(arr.size() == 0){return null;}
        return arr;
+    }
+
+    //String[0]:nội động từ ,[1] ngoại động từ,[2] động từ,[3] danh từ,[4] phó từ
+    //[5] tính từ ,[6] thán từ
+    public String[] Phanloai(Word v) {
+        String[] str1 = new String[1];
+        // Nếu từ đấy ko có các kiểu danh từ,động từ,... trả vêg mảng 1 phần tử là cả nghĩa
+        if (!v.getWord_explain().contains("*")) {
+            str1[0] = v.getWord_explain();;
+            return str1;
+        }
+        // Nếu từ đấy có các kiểu danh từ,động từ,........
+        String[] str2 = new String[7];
+        for (int i = 0; i < 7; i++) {
+            str2[i] = "";
+        }
+        String[] arr = v.getWord_explain().split("\n");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+            if (arr[i].contains("nội động từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[0] = str2[0] + arr[j];
+                }
+            } else if (arr[i].contains("ngoại động từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[1] = str2[1] + arr[j];
+                }
+            } else if (arr[i].contains("động từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[2] = str2[2] + arr[j];
+                }
+            } else if (arr[i].contains("danh từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[3] = str2[3] + arr[j];
+                }
+            } else if (arr[i].contains("phó từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[4] = str2[4] + arr[j];
+                }
+            } else if (arr[i].contains("tính từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[5] = str2[5] + arr[j];
+                }
+            } else if (arr[i].contains("thán từ")) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j].charAt(0) == '*') break;
+                    str2[6] = str2[6] + arr[j];
+                }
+            }
+        }
+        return str2;
     }
 
 }

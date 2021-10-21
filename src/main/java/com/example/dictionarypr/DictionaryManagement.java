@@ -175,7 +175,7 @@ public class DictionaryManagement {
      * hàm dictionaryExportToFile() có chức năng xuất dữ liệu từ điển ra file dictionaries.txt .
      * @throws IOException ngoại lệ khi không tìm thấy file (file không tồn tại) .
      */
-    public void dictionaryExportToFile() throws IOException{
+    public void dictionaryExportToFile() throws IOException {
         File file = new File(FILE);
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
