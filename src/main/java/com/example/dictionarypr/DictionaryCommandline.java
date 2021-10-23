@@ -141,7 +141,12 @@ public class DictionaryCommandline {
         return null;
     }
 
-    public ArrayList<Word> MySQLCon(String keyWord) {
+    /**
+     * hàm mySqlCon() để kết nối với Database ,trả về mảng từ tra được.
+     * @param keyWord .
+     * @return List từ kết quả search được từ keyWord cho trước.
+     */
+    public ArrayList<Word> mySQLCon(String keyWord) {
        keyWord = keyWord.toLowerCase();
        ArrayList<Word> arr = new ArrayList<>();
        try {
@@ -166,9 +171,13 @@ public class DictionaryCommandline {
        return arr;
     }
 
-    //String[0]:nội động từ ,[1] ngoại động từ,[2] động từ,[3] danh từ,[4] phó từ
-    //[5] tính từ ,[6] thán từ
-    public String[] phanLoai(Word v) {
+    //array[0]:nội động từ ,[1] ngoại động từ,[2] động từ,[3] danh từ,[4] phó từ,[5] tính từ ,[6] thán từ
+    /**
+     * hàm toDevide() để chia nghĩa của từ thành danh từ, động từ,.... và phiên âm.
+     * @param  v.
+     * @return  array .
+     */
+    public String[] toDevide(Word v) {
         String[] str1 = new String[2];
         String[] str2 = new String[8];
         String[] arr = v.getWord_explain().split("\n");
