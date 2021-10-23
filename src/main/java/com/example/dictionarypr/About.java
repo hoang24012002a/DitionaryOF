@@ -98,9 +98,14 @@ public class About implements Initializable {
         }));
         delBtn.setOnAction((new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                System.out.println(contentVbox.getChildren().indexOf(hBox));
-                dictionaryCommandline.delete(targetWord);
-                contentVbox.getChildren().remove(hBox);
+                try {
+                    Thread.sleep(500);
+                    System.out.println(contentVbox.getChildren().indexOf(hBox));
+                    dictionaryCommandline.delete(targetWord);
+                    contentVbox.getChildren().remove(hBox);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }));
         // create button speak;

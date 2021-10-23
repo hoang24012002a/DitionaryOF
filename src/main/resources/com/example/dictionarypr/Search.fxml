@@ -38,7 +38,7 @@
                                 </ImageView>
                             </graphic>
                         </JFXButton>
-                  <JFXTextArea fx:id="viWord" focusColor="#ff4747" layoutX="11.0" layoutY="200.0" prefHeight="229.0" prefWidth="362.0" unFocusColor="#6b83fa" />
+                  <JFXTextArea fx:id="viWord" focusColor="#ff4747" layoutX="11.0" layoutY="127.0" prefHeight="311.0" prefWidth="362.0" unFocusColor="#6b83fa" />
                   <JFXToggleButton fx:id="US_UKBtn" layoutX="294.0" layoutY="66.0" prefHeight="40.0" prefWidth="86.0" text="US" toggleColor="#00fff9" unToggleColor="#00c6ff" unToggleLineColor="#abac9d" AnchorPane.topAnchor="58.0" />
                   <JFXSlider fx:id="speedSlider" layoutX="15.0" layoutY="82.0" max="150.0" min="50.0" onMouseClicked="#action" prefHeight="33.0" prefWidth="186.0" scaleX="0.9" scaleY="0.8" showTickLabels="true" style="-fx-cursor: hand;" value="75.0" AnchorPane.topAnchor="79.0" />
                   <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="-1.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" scaleX="0.65" scaleY="0.65" AnchorPane.topAnchor="79.0">
