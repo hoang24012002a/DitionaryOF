@@ -174,68 +174,61 @@ public class DictionaryCommandline {
     //array[0]:nội động từ ,[1] ngoại động từ,[2] động từ,[3] danh từ,[4] phó từ,[5] tính từ ,[6] thán từ
     /**
      * hàm toDevide() để chia nghĩa của từ thành danh từ, động từ,.... và phiên âm.
-     * @param  v.
+     * @param  v .
      * @return  array .
      */
-    public String[] toDevide(Word v) {
-        String[] str1 = new String[2];
-        String[] str2 = new String[8];
+    public Word toDevide(Word v) {
         String[] arr = v.getWord_explain().split("\n");
-        // Nếu từ đấy ko có các kiểu danh từ,động từ,... trả vêg mảng 1 phần tử là cả nghĩa
+        // Nếu từ đấy ko có các kiểu danh từ,động từ,...
         if(arr[0].contains("/")) {
-            str1[0] = arr[0].substring(arr[0].indexOf("/")+1,arr[0].indexOf("/",arr[0].indexOf("/")+1));
-            str2[0] = arr[0].substring(arr[0].indexOf("/")+1,arr[0].indexOf("/",arr[0].indexOf("/")+1));
+            v.transcription = arr[0].substring(arr[0].indexOf("/")+1,arr[0].indexOf("/",arr[0].indexOf("/")+1));
         }
         if (!v.getWord_explain().contains("*")) {
-            str1[1] = "";
             for(int i = 1; i < arr.length; i++)
-                str1[1] = str1[1] + arr[i];
-            return str1;
+                v.undetermined = v.undetermined + arr[i];
+            return v;
         }
-        // Nếu từ đấy có các kiểu danh từ,động từ,........
-        for (int i = 1; i < 8; i++) {
-            str2[i] = "";
-        }
+        // Nếu từ đấy có các kiểu danh từ,động từ,.....
         for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+            //System.out.println(arr[i]);
             if (arr[i].contains("nội động từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[1] = str2[1] + arr[j] + "\n";
+                    v.noiDongTu = v.noiDongTu + arr[j] + "\n";
                 }
             } else if (arr[i].contains("ngoại động từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[2] = str2[2] + arr[j] + "\n";
+                    v.ngoaiDongTu = v.ngoaiDongTu + arr[j] + "\n";
                 }
             } else if (arr[i].contains("động từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[3] = str2[3] + arr[j] +"\n";
+                    v.dongTu = v.dongTu + arr[j] +"\n";
                 }
             } else if (arr[i].contains("danh từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[4] = str2[4] + arr[j] + "\n";
+                    v.danhTu = v.danhTu + arr[j] + "\n";
                 }
             } else if (arr[i].contains("phó từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[5] = str2[5] + arr[j] + "\n";
+                    v.phoTu = v.phoTu + arr[j] + "\n";
                 }
             } else if (arr[i].contains("tính từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[6] = str2[6] + arr[j] + "\n";
+                    v.tinhTu = v.tinhTu + arr[j] + "\n";
                 }
             } else if (arr[i].contains("thán từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;
-                    str2[7] = str2[7] + arr[j] + "\n";
+                    v.thanTu = v.thanTu + arr[j] + "\n";
                 }
             }
         }
-        return str2;
+        return v;
     }
 
 }
