@@ -2,6 +2,7 @@ package com.example.dictionarypr;
 ;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXSlider;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -10,14 +11,22 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,13 +37,12 @@ public class Search implements Initializable {
     private final DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
     private ArrayList<Word> engWordList;
     private double speed;
-    private Word word;
     @FXML
-    private JFXListView<String> listEnglish;
+    private ListView<String> listEnglish;
     @FXML
     private Label engWord;
     @FXML
-    private Label viWord;
+    private JFXTextArea viWord;
     @FXML
     private TextField searchText;
     @FXML
@@ -55,14 +63,7 @@ public class Search implements Initializable {
                 observableList.add(value.getWord_target());
             }
             listEnglish.setItems(observableList);
-            listEnglish.setCellFactory(new Callback<ListView<String>,
-                                               ListCell<String>>() {
-                                           @Override
-                                           public ListCell<String> call(ListView<String> list) {
-                                               return new LabelCell();
-                                           }
-                                       }
-            );
+            listEnglish.setCellFactory(list -> new LabelCell());
         } else {
             listEnglish.getItems().clear();
             listEnglish.setPlaceholder(new Label("null"));
@@ -73,18 +74,36 @@ public class Search implements Initializable {
         @Override
         public void updateItem(String item, boolean empty) {
             super.updateItem(item, empty);
-            Label label = new Label();
             if(empty || item == null) {
                 setGraphic(null);
                 setText(null);
             }
             else {
+                HBox hBox = new HBox();
+                hBox.setPrefWidth(184);
+                hBox.setPrefHeight(29.0);
+                Label label = new Label();
+//                Font font = new Font("Noto Sans Mono", 12);
+//                label.setFont(font);
+                label.setStyle("-fx-font-weight: 900; -fx-font-size: 14;");
                 label.setText(item);
-                label.setFont(new Font("Cambria", 25));
-                label.setPrefWidth(172);
-                label.setPrefHeight(28);
-                label.setCursor(Cursor.HAND);
-                setGraphic(label);
+                label.setPrefHeight(23.0);
+                label.setPrefWidth(154.0);
+                label.setMinWidth(154.0);
+                ImageView imageView = new ImageView();
+                imageView.setFitHeight(24.0);
+                imageView.setFitWidth(24.0);
+                imageView.setPickOnBounds(true);
+                imageView.setPreserveRatio(true);
+                imageView.setScaleY(0.9);
+                imageView.setScaleX(0.9);
+                File path = new File("src/main/resources/com/example/dictionarypr/images/checked_icon.png");
+                imageView.setImage(new Image(path.toURI().toString()));
+                hBox.getChildren().addAll(label, imageView);
+                HBox.setMargin(label, new Insets(2.5, 0, 0, 2.0));
+                HBox.setMargin(imageView, new Insets(2.5, 0, 0, 6.0));
+                hBox.setStyle("-fx-background-radius: 20 4 20 4; -fx-border-radius: 20 4 20 4; -fx-border-color: #66ff66");
+                setGraphic(hBox);
             }
         }
     }
@@ -92,7 +111,7 @@ public class Search implements Initializable {
     protected void getEnglishWord(MouseEvent clicked) {
         if (engWordList != null) {
             int index = listEnglish.getSelectionModel().getSelectedIndex();
-            word = engWordList.get(index);
+            Word word = engWordList.get(index);
             String engText = word.getWord_target();
             String viText = word.getWord_explain();
             engWord.setText(engText);

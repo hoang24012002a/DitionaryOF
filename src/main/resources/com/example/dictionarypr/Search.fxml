@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXSlider?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXToggleButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<Pane fx:id="searchBackground" stylesheets="@Search.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Search">
+<Pane fx:id="searchBackground" stylesheets="@Search.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Search">
     <children>
         <BorderPane fx:id="searchBorderPane" prefHeight="500.0" prefWidth="630.0">
             <center>
@@ -49,7 +38,7 @@
                                 </ImageView>
                             </graphic>
                         </JFXButton>
-                  <JFXTextArea focusColor="#ff4747" layoutX="11.0" layoutY="200.0" prefHeight="229.0" prefWidth="362.0" unFocusColor="#6b83fa" />
+                  <JFXTextArea fx:id="viWord" focusColor="#ff4747" layoutX="11.0" layoutY="200.0" prefHeight="229.0" prefWidth="362.0" unFocusColor="#6b83fa" />
                   <JFXToggleButton fx:id="US_UKBtn" layoutX="294.0" layoutY="66.0" prefHeight="40.0" prefWidth="86.0" text="US" toggleColor="#00fff9" unToggleColor="#00c6ff" unToggleLineColor="#abac9d" AnchorPane.topAnchor="58.0" />
                   <JFXSlider fx:id="speedSlider" layoutX="15.0" layoutY="82.0" max="150.0" min="50.0" onMouseClicked="#action" prefHeight="33.0" prefWidth="186.0" scaleX="0.9" scaleY="0.8" showTickLabels="true" style="-fx-cursor: hand;" value="75.0" AnchorPane.topAnchor="79.0" />
                   <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="-1.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" scaleX="0.65" scaleY="0.65" AnchorPane.topAnchor="79.0">
@@ -74,32 +63,8 @@
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin></TextField>
-                  <ScrollPane hmax="0.0" prefHeight="290.0" prefWidth="215.0" vmax="2.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="395.0" prefWidth="198.0">
-                           <children>
-                              <VBox prefHeight="395.0" prefWidth="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                              <HBox fx:id="cellHbox" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="198.0" stylesheets="@Home.css" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Label fx:id="engWLabel" minWidth="160.0" prefHeight="23.0" prefWidth="160.0" text="Apple">
-                                       <HBox.margin>
-                                          <Insets left="2.0" top="2.5" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">
-                                       <HBox.margin>
-                                          <Insets left="6.0" top="2.5" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@images/checked_icon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
+                  <ListView fx:id="listEnglish" fixedCellSize="30.0" onMouseClicked="#getEnglishWord" prefHeight="300.0" prefWidth="215.0" />
+
                     </children>
                     <BorderPane.margin>
                         <Insets left="10.0" right="10.0" />
