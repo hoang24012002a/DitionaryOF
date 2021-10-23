@@ -8,6 +8,7 @@ module com.example.dictionarypr {
     requires jlayer;
     requires java.desktop;
     requires com.jfoenix;
+    requires AnimateFX;
 
     opens com.example.dictionarypr to javafx.fxml;
     exports com.example.dictionarypr;
