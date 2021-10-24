@@ -11,18 +11,18 @@
 }
 
 #hoangLabel{
-    font-family: 'Quicksand', sans-serif;
-    -fx-font-size: 24px;
+    -fx-font-family: 'Quicksand', sans-serif;
+    -fx-font-size: 20px;
 }
 
 #tuanLabel{
-    font-family: 'Quicksand', sans-serif;
-    -fx-font-size: 24px;
+    -fx-font-family: 'Quicksand', sans-serif;
+    -fx-font-size: 20px;
 }
 
 #truongLabel{
-    font-family: 'Quicksand', sans-serif;
-    -fx-font-size: 24px;
+    -fx-font-family: 'Quicksand', sans-serif;
+    -fx-font-size: 20px;
 }
 
 #thankLabel{
@@ -36,8 +36,8 @@
 }
 
 #tranButton{
-    -fx-background-radius: 20 2 20 2;
-    -fx-border-radius: 20 2 20 2;
+    -fx-background-radius: 20 4 20 4;
+    -fx-border-radius: 20 4 20 4;
     -fx-cursor: hand;
 }
 
@@ -54,6 +54,7 @@
     -fx-border-radius: 20 4 20 4;
     -fx-border-color: #66ff66;
 }
+
 
 #engWLabel{
     -fx-font-family: 'Noto Sans Mono', monospace;

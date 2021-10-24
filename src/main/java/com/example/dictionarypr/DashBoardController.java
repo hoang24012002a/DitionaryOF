@@ -1,6 +1,5 @@
 package com.example.dictionarypr;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +10,11 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import animatefx.animation.*;
+import animatefx.util.ParallelAnimationFX;
+import animatefx.util.SequentialAnimationFX;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -20,6 +23,7 @@ import java.util.ResourceBundle;
 public class DashBoardController implements Initializable {
     @FXML
     private StackPane contentArea;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -34,26 +38,32 @@ public class DashBoardController implements Initializable {
         Parent fxml = FXMLLoader.load(getClass().getResource("Home.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
+        new BounceInDown(contentArea).play();
     }
     public void search(ActionEvent actionEvent) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("Search.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
+        new BounceInDown(contentArea).play();
+
     }
     public void about(ActionEvent actionEvent) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("About.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
+        new BounceInDown(contentArea).play();
     }
     public void account(ActionEvent actionEvent) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("Account.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
+        new BounceInDown(contentArea).play();
     }
     public void setting(ActionEvent actionEvent) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("Setting.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
+        new BounceInDown(contentArea).play();
     }
     public void exit(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

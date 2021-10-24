@@ -1,5 +1,6 @@
 package com.example.dictionarypr;
-;
+
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXTextArea;
@@ -24,6 +25,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
+import animatefx.animation.*;
+import animatefx.util.ParallelAnimationFX;
+import animatefx.util.SequentialAnimationFX;
+import javafx.util.Duration;
 
 import java.awt.*;
 import java.io.File;
@@ -47,9 +52,12 @@ public class Search implements Initializable {
     private TextField searchText;
     @FXML
     private JFXToggleButton US_UKBtn;
-
+    @FXML
+    private JFXButton markJFXButton;
     @FXML
     private JFXSlider speedSlider;
+    @FXML
+    private JFXButton speakJFXButton;
 
     @FXML
     protected void renderListWord(KeyEvent actionEvent) {
@@ -114,6 +122,7 @@ public class Search implements Initializable {
             Word word = engWordList.get(index);
             String engText = word.getWord_target();
             String viText = word.getWord_explain();
+            new BounceIn(engWord).play();
             engWord.setText(engText);
             viWord.setText(viText);
         }
@@ -121,6 +130,7 @@ public class Search implements Initializable {
 
     @FXML
     protected void speakEnglishUs(ActionEvent clicked) {
+        new Wobble(speakJFXButton).setResetOnFinished(true).play();
         String text = engWord.getText();
         String languageSpeech = US_UKBtn.getText();
         if (languageSpeech.equals("US")) {
@@ -128,7 +138,6 @@ public class Search implements Initializable {
         } else {
             engineSpeech.speak(text, "en-uk", speed);
         }
-
     }
 
     @FXML
@@ -140,6 +149,7 @@ public class Search implements Initializable {
 
     @FXML
     protected void addNewWord(ActionEvent clicked) {
+        new Pulse(markJFXButton).play();
         String engWordAdd = engWord.getText();
         String viWordAdd = viWord.getText();
         viWordAdd = viWordAdd.replaceAll("\n", "<br>");
