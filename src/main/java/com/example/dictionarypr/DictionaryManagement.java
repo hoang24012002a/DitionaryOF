@@ -183,7 +183,9 @@ public class DictionaryManagement {
             for (int j = 0; j < k.getWordsArray().get(i).size(); j++) {
                 outputStreamWriter.write(k.getWordsArray().get(i).get(j).getWord_target());
                 outputStreamWriter.write("\t");
-                outputStreamWriter.write(k.getWordsArray().get(i).get(j).getWord_explain());
+                String s = k.getWordsArray().get(i).get(j).getWord_explain();
+                s = s.replace("\n","<br />");
+                outputStreamWriter.write(s);
                 outputStreamWriter.write("\n");
             }
         }

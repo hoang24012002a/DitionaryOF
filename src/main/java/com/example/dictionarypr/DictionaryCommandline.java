@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.sql.*;
+import java.util.List;
 
 public class DictionaryCommandline {
     private DictionaryManagement d = new DictionaryManagement();
@@ -190,7 +191,7 @@ public class DictionaryCommandline {
         }
         // Nếu từ đấy có các kiểu danh từ,động từ,.....
         for (int i = 0; i < arr.length; i++) {
-            //System.out.println(arr[i]);
+            System.out.println(arr[i]);
             if (arr[i].contains("nội động từ")) {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[j].charAt(0) == '*') break;

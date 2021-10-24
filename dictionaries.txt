@@ -1,26 +1,2 @@
-army	quân đội
-baby	em bé
-brother	bo
-computer	máy tính
-family	gia đình
-friend	ban be
-health	sức khỏe
-history	lịch sử
-inaction	sự thiếu hoạt động
-information	thông tin
-integer	số nguyên
-integraaph	máy đo diện tích
-integrability	tính khả tích
-integral	trọn vẹn
-integrality	tính toàn bộ
-library	thư viện
-love	yêu
-map	bản đồ
-people	người
-system	hệ thống
-transform	thay đổi hoàn toàn
-transit	đi qua
-translate	phiên dịch
-transport	vận tải
-way	duong
-world	thế giới
+appal	appal /ə'pɔ:l/<br />*  ngoại động từ<br />- làm kinh hoảng, làm kinh sợ, làm thất kinh
+love	love /lʌv/<br />*  danh từ<br />- lòng yêu, tình thương<br />=love of one's country+ lòng yêu nước<br />=a mother's love for her children+ tình mẹ yêu con<br />- tình yêu, mối tình, ái tình<br />=first love+ mối tình đầu<br />=never trifle with love+ không nên đùa bỡn với tình yêu<br />=to be in love with+ yêu (ai)<br />=to fall in love with+ đâm ra yêu (phải lòng) (ai)<br />=to make love to someone+ tán tỉnh ai, tỏ tình với ai; ôm ấp hôn hít ai, ăn nằm với ai<br />=to marry for love+ kết hôn vì tình<br />- người yêu, người tình<br />- thần ái tình<br />- (thông tục) người đáng yêu; vật đáng yêu<br />- (thể dục,thể thao) điểm không, không (quần vợt)<br />=love all+ không không (hai bên cùng không được điểm nào)<br />=love forty+ không bốn mươi<br />=a love set+ một ván thua trắng (người thua không được điểm nào)<br />!to love in a cottage<br />- ái tình và nước lã<br />!one can't get it for love or money<br />- không có cách gì lấy được cái đó<br />!to play for love<br />- chơi vì thích không phải vì tiền<br />!there is no love lost between them<br />- chúng nó ghét nhau như đào đất đổ đi<br />*  ngoại động từ<br />- yêu, thương, yêu mến<br />=to love one another+ yêu nhau, thương nhau<br />- thích, ưa thích<br />=to love sports+ thích thể thao<br />=to love music+ thích âm nhạc<br />=he loves to be praised+ nó thích được khen
