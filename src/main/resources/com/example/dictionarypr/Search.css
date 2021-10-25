@@ -75,8 +75,7 @@
 
 #listEnglish{
     -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-border-color: orange;
+
     -fx-background-insets: 0;
     -fx-cell-vertical-margin: 10.0;
     -fx-vertical-gap: 10;

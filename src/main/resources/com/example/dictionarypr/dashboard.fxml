@@ -12,16 +12,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" style="-fx-border-radius: 20;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
+<BorderPane fx:id="back_ground_pane" prefHeight="600.0" prefWidth="900.0" style="-fx-border-radius: 20;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.DashBoardController">
    <left>
       <VBox fx:id="button_bar" prefHeight="600.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="avatar" fitHeight="170.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="avatar" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/tuan_nobrk.png" />
+                  <Image url="@images/inapp_icon.png" />
                </image>
                <VBox.margin>
-                  <Insets left="53.0" />
+                  <Insets left="78.0" />
                </VBox.margin>
             </ImageView>
             <Button mnemonicParsing="false" onAction="#home" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-border-color: none; -fx-background-radius: 30;" stylesheets="@stylesheet.css" text="Home">

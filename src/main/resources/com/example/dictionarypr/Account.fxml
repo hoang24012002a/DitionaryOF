@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="accountPane" prefHeight="500.0" prefWidth="630.0" stylesheets="@Account.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Account">
+<Pane fx:id="accountPane" prefHeight="500.0" prefWidth="630.0" stylesheets="@Account.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Account">
    <children>
       <PasswordField fx:id="passField" layoutX="242.0" layoutY="292.0" prefHeight="26.0" prefWidth="150.0" style="-fx-border-color: red; -fx-border-radius: 20; -fx-background-radius: 20;" />
       <TextField fx:id="accTextField" layoutX="242.0" layoutY="238.0" prefHeight="26.0" prefWidth="150.0" style="-fx-border-color: blue; -fx-background-radius: 20; -fx-border-radius: 20;" />

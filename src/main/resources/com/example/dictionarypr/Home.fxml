@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" style="-fx-background-radius: 30; -fx-background-color: #FBFBFB;" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Home">
+<Pane fx:id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" style="-fx-background-radius: 30; -fx-background-color: #FBFBFB;" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Home">
     <children>
         <ImageView fx:id="ielts_imane" fitHeight="238.0" fitWidth="521.0" layoutX="96.0" pickOnBounds="true" preserveRatio="true">
             <image>
