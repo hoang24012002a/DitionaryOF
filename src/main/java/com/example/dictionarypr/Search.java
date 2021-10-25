@@ -122,6 +122,8 @@ public class Search implements Initializable {
             Word word = engWordList.get(index);
             String engText = word.getWord_target();
             String viText = word.getWord_explain();
+            String pronun = word.pronunciationOfWord(word);
+            speakJFXButton.setText(pronun);
             new BounceIn(engWord).play();
             engWord.setText(engText);
             viWord.setText(viText);
@@ -174,5 +176,6 @@ public class Search implements Initializable {
                 }
             }
         });
+        viWord.setEditable(false);
     }
 }
