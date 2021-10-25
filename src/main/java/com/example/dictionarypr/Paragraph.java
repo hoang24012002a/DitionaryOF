@@ -8,6 +8,9 @@ import animatefx.animation.*;
 import animatefx.util.ParallelAnimationFX;
 import animatefx.util.SequentialAnimationFX;
 import javafx.fxml.Initializable;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 
@@ -33,9 +36,17 @@ public class Setting implements Initializable {
         new RotateIn(tranButton).play();  /** ???? Why it not work ??? **/
         viText.setText(vi);
     }
+    @FXML
+    protected void renderTextByEnter(KeyEvent keyEvent) {
+        if(keyEvent.getCode() == KeyCode.ENTER) {
+            String eng = engText.getText();
+            String vi = textToTextEngine.translate(eng);
+            viText.setText(vi);
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        viText.setEditable(false);
     }
 }
