@@ -60,7 +60,7 @@ public class DashBoardController implements Initializable {
         new BounceInDown(contentArea).play();
     }
     public void setting(ActionEvent actionEvent) throws IOException {
-        Parent fxml = FXMLLoader.load(getClass().getResource("Setting.fxml"));
+        Parent fxml = FXMLLoader.load(getClass().getResource("Paragraph.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
         new BounceInDown(contentArea).play();
