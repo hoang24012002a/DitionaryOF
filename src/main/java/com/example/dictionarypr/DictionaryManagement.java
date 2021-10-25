@@ -135,7 +135,7 @@ public class DictionaryManagement {
     }
 
     /**
-     * Hàm có chức năng sử từ.
+     * Hàm có chức năng sửa từ.
      * @param English argument.
      * @param Vietnamese argument.
      * @return boolean.
