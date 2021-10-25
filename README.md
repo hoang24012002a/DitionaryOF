@@ -48,6 +48,7 @@ Chưa hoàn thiện xong các pane Acc, Set,...(cố gắng hoàn thiện trong 
 7. Class DictionaryManagement phát triển thêm các hàm có chức năng thêm , sửa , xóa dữ liệu bằng dòng lệnh .
 8. Class DictionaryCommandLine bổ sung hàm dictionarySearcher() có chức năng tìm kiếm các từ .
 9. Class DictionaryManagement bổ sung hàm dictionaryExportToFile() có chức năng xuất dữ liệu từ điển hiện tại ra files .
-![app_icon](https://user-images.githubusercontent.com/80667158/138655032-1c3a6702-7443-4421-9d13-3582c1f82a2b.png)
+
+![ezgif-1-8fcd2b6237e3](https://user-images.githubusercontent.com/80667158/138657769-f4fb4dca-2547-4c1c-8141-28757ba1a4c1.gif)
 
 
