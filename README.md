@@ -1,54 +1,32 @@
-##Cập nhật giao diện lần 2
-* Chỉnh sửa lại layout pane search.(Tuấn gửi bản thô, Trường hoàn thiện)
-* cấu trúc lại thư mục.
-* Done(nhưng chưa đẹp)
-* Thêm lib JFoenix(hỗ trợ đồ hoạ 2D) https://github.com/sshahine/JFoenix
-* Các layout có style.css riêng
-* Các file css được thêm thẳng vào .fxml nên các file .java ko cần câu lệnh scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+DEMO
 
-##Hạn chế
-* Vẫn chưa hoàn thiện được phần đồ hoạ
-* Font chưa vẫn xấu (do lười chưa nhiều label quá :))
-* Các button vẫn thô
-* Chưa có hiệu ứng chuyển scene
-* Ý tưởng về Account vẫn chưa đi vào đâu
+![Demo](https://user-images.githubusercontent.com/80667158/138659968-17a57c91-b80e-4565-a3df-648b918343f1.gif)
 
-## Cập nhật giao diện lần 1
-pane search cơ bản là hoàn thiện
-cần xây dựng method chuyển pane để việc xây dựng các pane như Account, Setting, About
-!!! Ý tưởng mới(đang hoàn thiện)
-{
-mỗi người dùng sẽ có một account
-setting sẽ có thể điều chỉnh tốc độ hay giọng(nam/nữ)
-about sẽ nêu danh các tác giả cùng với link để tải phần mềm
-(dự định là sẽ đóng cả mã nguồn thành 1 file jar để có thể tiện cho việc chia sẻ)
-nhưng khá là khó bởi conflig môi trường của từng máy...
-}
-## Hiệu ứng (đang hoàn thiện trên file css)
-## Hạn chế
-Font chữ còn thô kệch
-Các button chưa tạo được hiệu ứng press, hover
-Chưa hoàn thiện xong các pane Acc, Set,...(cố gắng hoàn thiện trong tuần).
-## Mọi người clone về máy mình nhé !
-# Đây là phiên bản từ điển Command line cải tiến lần 2,
-#mọi người xem và cho ý kiến nhé !
-## Các chức năng cũ:
-1. Hàm insertFromCommandline() có chức năng nhập liệu. 
-2. Hàm showAllWords() có chức năng hiển thị kết quả danh sách dữ liệu từ điển trên màn hình.
-3. Hàm dictionaryBasic() có chức năng gọi hàm insertFromCommandline() và showAllWords().
-## Các chức năng mới(so với bản sơ khai):
-1. Bổ sung hàm insertFromFile() có chức năng nhập dữ liệu từ điển từ tệp dictionaries.txt .
-2. Bổ sung hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
-3. Bổ sung hàm dictionaryAdvanced() có chức năng gọi các hàm insertFromFile(), showAllWords() và dictionaryLookup() .
 
-4. Bổ sung hàm insertFromFile() có chức năng nhập dữ liệu từ điển từ tệp dictionaries.txt .
-5. Bổ sung hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
-6. Bổ sung hàm dictionaryAdvanced() có chức năng gọi các hàm insertFromFile(), showAllWords() và dictionaryLookup() .
-## Các chức năng mới :
-7. Class DictionaryManagement phát triển thêm các hàm có chức năng thêm , sửa , xóa dữ liệu bằng dòng lệnh .
-8. Class DictionaryCommandLine bổ sung hàm dictionarySearcher() có chức năng tìm kiếm các từ .
-9. Class DictionaryManagement bổ sung hàm dictionaryExportToFile() có chức năng xuất dữ liệu từ điển hiện tại ra files .
+Đây là chương trình Từ Điển bằng Java với sự tham gia của các sinh viên :
+1. Nguyễn Văn Trường (Nhóm 9, MSV:20020491)
+2. Vũ Văn Tuấn (Nhóm 9, MSV:20020497)
+3. Vũ Duy Hoàng (Nhóm 7, MSV:20020413, Manager)
 
-![ezgif-1-8fcd2b6237e3](https://user-images.githubusercontent.com/80667158/138657769-f4fb4dca-2547-4c1c-8141-28757ba1a4c1.gif)
+Các chức năng của ứng dụng Từ Điển :
+1. Tra cứ từ và dịch nghĩa, phiên âm, phát âm các từ theo US/UK, phiên âm tuỳ theo tốc độ.
+( Sử dụng dữ liệu từ điển tiếng anh trên mạng bằng mysql, thây vì nạp từ từ file dictionaries.txt).
+2. Tích hợp kết quả tra từ, đoạn văn bản bằng API google translate.
+3. Có thể lưu các từ mình đã tra lại để dễ dàng sử dụng khi cần thiết
+4. Có thể dịch cả 1 đoạn văn bản tiếng Anh
+
+
+Ưu điểm : Giao diện đồ họa dễ dùng, thân thiện , tra cứ các từ trên cơ sở dữ liệu nhanh chóng,
+các tính năng đều hướng tới sự gần gũi,thao tác nhanh chóng,dễ sử dụng đúng mục đích với yêu cầu
+của người dùng.
+
+Các thư viện được sử dụng trong sản phẩm:
+1. giao diện cơ bản được dựng lên từ javafx có sẵn trong intellij và jfoenix (https://github.com/sshahine/JFoenix)
+2. hiệu ứng sử dụng animatefx(https://github.com/typhon0/AnimateFX).
+3. text-to-text: Sử dụng https://script.google.com tạo API cung cấp cho ứng dụng.
+4. text-to-speech: https://github.com/goxr3plus/java-google-speech-api cung cấp demo và hướng dẫn sử dụng.
+
+
+
 
 
