@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+#back_ground_pane{
+    -fx-background-color: linear-gradient(to right, #ffefba, #ffffff);
+}
+
+#button_bar{
+    -fx-background-color: linear-gradient(#c6ffdd, #fbd786, #f7797d);
+    -fx-background-radius: 30 30 30 0;
+}
+
+#tiltleLabel{
+    -fx-font-family: 'Rampart One', cursive;
+    -fx-font-size: 26px;
+}
+
+
+#mag_glass{
+    fx-background-image: none;
+}
+
+#book_icon{
+    fx-background-image: none;
+}
+
+#man_icon{
+    fx-background-image: none;
+}
+
+#setting_icon{
+    fx-background-image: none;
+}
+
+#exitButton{
+    -fx-background-color: none;
+    -fx-background-radius: 30;
+}
+
+#exitButton:hover{
+    -fx-background-color: #FF0C3A;
+}
+
+/*.button{
+    -fx-font-family: 'Varela Round', sans-serif;
+}*/
+
+
+.button:pressed
+{
+    -fx-background-color:
+            linear-gradient(#f2f2f2, #d6d6d6),
+            linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
+            linear-gradient(#dddddd 0%, #f6f6f6 50%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@700&display=swap');
+
+#madeLabel{
+    -fx-font-family: 'Noto Sans Mono', monospace;
+    -fx-font-size: 24px;
+}
+
+#hoangLabel{
+    -fx-font-family: 'Quicksand', sans-serif;
+    -fx-font-size: 20px;
+}
+
+#tuanLabel{
+    -fx-font-family: 'Quicksand', sans-serif;
+    -fx-font-size: 20px;
+}
+
+#truongLabel{
+    -fx-font-family: 'Quicksand', sans-serif;
+    -fx-font-size: 20px;
+}
+
+#thankLabel{
+    -fx-font-family: 'Itim', cursive;
+    -fx-font-size: 20px;
+}
+
+#homePane{
+    -fx-background-radius: 30;
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+#tranButton{
+    -fx-background-radius: 20 4 20 4;
+    -fx-border-radius: 20 4 20 4;
+    -fx-cursor: hand;
+}
+
+#tranButton:hover{
+    -fx-border-color: #ff9900;
+}
+
+#tranButton:pressed{
+    -fx-background-color: #00ff99;
+}
+
+#cellHbox{
+    -fx-background-radius: 20 4 20 4;
+    -fx-border-radius: 20 4 20 4;
+    -fx-border-color: #66ff66;
+}
+
+
+#engWLabel{
+    -fx-font-family: 'Noto Sans Mono', monospace;
+    -fx-font-size: 12px;
+}

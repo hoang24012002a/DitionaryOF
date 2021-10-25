@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="searchBackground" stylesheets="@Search.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Search">
+    <children>
+        <BorderPane fx:id="searchBorderPane" prefHeight="500.0" prefWidth="630.0">
+            <center>
+                <AnchorPane prefHeight="450.0" prefWidth="410.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="engWord" layoutY="1.0" prefHeight="80.0" prefWidth="258.0" text="" textAlignment="CENTER">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <cursor>
+                                <Cursor fx:constant="TEXT" />
+                            </cursor></Label>
+                        <JFXButton fx:id="speakJFXButton" layoutX="275.0" layoutY="28.0" onAction="#speakEnglishUs" prefHeight="32.0" prefWidth="126.0" scaleX="0.9" scaleY="0.9" style="-fx-background-radius: 30; -fx-cursor: hand; -fx-border-color: purple; -fx-border-radius: 30;" text="" AnchorPane.bottomAnchor="389.6" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="8.200000000000045" AnchorPane.topAnchor="28.0">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/play_32.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="markJFXButton" ellipsisString="" layoutX="201.0" layoutY="28.0" onAction="#addNewWord" scaleX="0.9" scaleY="0.9" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-background-radius: 20; -fx-cursor: hand;" text="Mark">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/favourite_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                  <JFXTextArea fx:id="viWord" focusColor="#ff4747" layoutX="11.0" layoutY="127.0" prefHeight="311.0" prefWidth="362.0" unFocusColor="#6b83fa" />
+                  <JFXToggleButton fx:id="US_UKBtn" layoutX="294.0" layoutY="66.0" prefHeight="40.0" prefWidth="86.0" text="US" toggleColor="#00fff9" unToggleColor="#00c6ff" unToggleLineColor="#abac9d" AnchorPane.topAnchor="58.0" />
+                  <JFXSlider fx:id="speedSlider" layoutX="15.0" layoutY="82.0" max="150.0" min="50.0" onMouseClicked="#action" prefHeight="33.0" prefWidth="186.0" scaleX="0.9" scaleY="0.8" showTickLabels="true" style="-fx-cursor: hand;" value="75.0" AnchorPane.topAnchor="79.0" />
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="-1.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" scaleX="0.65" scaleY="0.65" AnchorPane.topAnchor="79.0">
+                     <image>
+                        <Image url="@images/speed_icon.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </AnchorPane>
+            </center>
+            <top>
+                <StackPane prefHeight="50.0" stylesheets="@Search.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="grammarLabel" prefHeight="18.0" prefWidth="161.0" text="Grammar" />
+                    </children></StackPane>
+            </top>
+            <left>
+                <VBox prefHeight="451.0" prefWidth="215.0" BorderPane.alignment="CENTER">
+                    <children>
+
+                        <TextField fx:id="searchText" onKeyReleased="#renderListWord" prefHeight="30.0" prefWidth="200.0" promptText="Find word...">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin></TextField>
+                  <ListView fx:id="listEnglish" fixedCellSize="30.0" onMouseClicked="#getEnglishWord" prefHeight="300.0" prefWidth="215.0" />
+
+                    </children>
+                    <BorderPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </BorderPane.margin>
+                </VBox>
+            </left>
+        </BorderPane>
+    </children>
+</Pane>

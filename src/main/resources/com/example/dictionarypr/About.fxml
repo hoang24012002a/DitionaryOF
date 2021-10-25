@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="aboutPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" stylesheets="@Account.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.About">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutX="35.0" layoutY="51.0" prefHeight="392.0" prefWidth="561.0" vbarPolicy="ALWAYS">
+         <content>
+            <VBox fx:id="contentVbox" prefHeight="242.0" prefWidth="546.0">
+               <children>
+<!--                  <HBox fx:id="hBox" prefHeight="32.0" prefWidth="546.0">-->
+<!--                     <children>-->
+<!--                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                           <image>-->
+<!--                              <Image url="@images/united-kingdom_icon.png" />-->
+<!--                           </image>-->
+<!--                        </ImageView>-->
+<!--                        <Text fx:id="word" strokeType="OUTSIDE" strokeWidth="0.0" text="apple" wrappingWidth="180.53669357299805">-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="28.0" top="2.0" />-->
+<!--                           </HBox.margin>-->
+<!--                           <font>-->
+<!--                              <Font size="21.0" />-->
+<!--                           </font>-->
+<!--                        </Text>-->
+<!--                        <JFXButton fx:id="delButton" ellipsisString="" scaleX="0.9" scaleY="0.9" style="-fx-background-radius: 20; -fx-border-color: red; -fx-border-radius: 20;" text="Del">-->
+<!--                           <graphic>-->
+<!--                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">-->
+<!--                                 <image>-->
+<!--                                    <Image url="@images/bin_icon.png" />-->
+<!--                                 </image>-->
+<!--                              </ImageView>-->
+<!--                           </graphic>-->
+<!--                           <cursor>-->
+<!--                              <Cursor fx:constant="HAND" />-->
+<!--                           </cursor>-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="94.0" top="1.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </JFXButton>-->
+<!--                        <JFXButton fx:id="speakButton" prefHeight="32.0" prefWidth="126.0" scaleX="0.9" scaleY="0.9" style="-fx-background-radius: 30; -fx-cursor: hand; -fx-border-color: purple; -fx-border-radius: 30;" text="/ˈapəl/">-->
+<!--                           <graphic>-->
+<!--                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                 <image>-->
+<!--                                    <Image url="@images/play_32.png" />-->
+<!--                                 </image>-->
+<!--                              </ImageView>-->
+<!--                           </graphic>-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="3.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </JFXButton>-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>

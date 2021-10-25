@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="settingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarypr.Paragraph">
+   <children>
+      <JFXTextArea fx:id="engText" layoutX="23.0" layoutY="65.0" onKeyPressed="#renderTextByEnter" prefHeight="146.0" prefWidth="354.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <Label fx:id="titleLabel" layoutX="223.0" layoutY="14.0" prefHeight="27.0" prefWidth="200.0" text="Translate paragraph" textAlignment="CENTER">
+         <font>
+            <Font name="Georgia" size="21.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="viText" focusColor="#ff3b3b" layoutX="256.0" layoutY="306.0" prefHeight="146.0" prefWidth="354.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="483.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/united-kingdom_128.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="84.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/vietnam128_2.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="tranButton" ellipsisString="" graphicTextGap="0.0" layoutX="273.0" layoutY="250.0" onAction="#renderText" prefHeight="27.0" prefWidth="85.0" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/translate_icon2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</Pane>
